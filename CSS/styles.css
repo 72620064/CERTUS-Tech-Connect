@@ -1,0 +1,1280 @@
+/* RESET DE ESTILOS DE FUENTE Y CONFIGURACIÓN BASE */
+body {
+    background-color: #f6f8fa; /* El gris claro exacto del fondo */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* NAVBAR DISEÑO CALCADO DE LA IMAGEN */
+.certus-navbar {
+    background-color: #0b1a30 !important; /* Azul marino profundo */
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+    border: none !important;
+}
+
+.custom-nav-container {
+    padding-left: 4.5% !important;
+    padding-right: 4.5% !important;
+}
+
+/* Tipografía de la marca en el Navbar */
+.navbar-brand-custom {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: #ffffff !important;
+}
+
+.brand-bold {
+    font-weight: 700;
+    letter-spacing: -0.3px;
+}
+
+.brand-light {
+    font-weight: 300;
+    opacity: 0.85;
+    margin-left: 2px;
+}
+
+/* Elementos del menú */
+.exact-menu-list {
+    gap: 14px;
+}
+
+.nav-link-custom {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-size: 0.95rem;
+    text-decoration: none;
+    font-weight: 400;
+    padding: 6px 12px;
+    transition: color 0.2s ease;
+}
+
+.nav-link-custom:hover {
+    color: #ffffff !important;
+}
+
+/* Botón "Crear" Ovalado exacto */
+.btn-crear-exact {
+    background-color: #1a73e8 !important; /* Azul eléctrico de la imagen */
+    color: #ffffff !important;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 8px 36px !important; /* Logra la proporción estirada/horizontal */
+    border-radius: 50px !important; /* Completamente ovalado */
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.2s ease;
+}
+
+.btn-crear-exact:hover {
+    background-color: #155cb4 !important;
+}
+
+/* BANNER DE TÍTULO PRINCIPAL */
+.hero-banner-section {
+    background-color: #0b1a30; /* Misma pieza de color continuo */
+    padding-top: 25px;
+    padding-bottom: 95px; /* Altura idéntica para permitir la superposición de la tarjeta */
+}
+
+.main-title-exact {
+    color: #ffffff;
+    font-size: 2.6rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    margin: 0;
+}
+
+/* TARJETA BLANCA CENTRAL */
+.form-wrapper-container {
+    margin-top: -65px; /* Eleva la tarjeta sobre el azul oscuro */
+    position: relative;
+    z-index: 10;
+    margin-bottom: 90px;
+}
+
+.main-card-exact {
+    background-color: #ffffff;
+    border-radius: 28px !important; /* Bordes redondeados pronunciados */
+    padding: 45px 50px 50px 50px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.015); /* Sombra casi invisible */
+}
+
+.card-field-group {
+    margin-bottom: 26px;
+}
+
+.field-label-exact {
+    font-weight: 700;
+    color: #111111;
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+    display: block;
+}
+
+/* Iconos de verificación */
+.exact-icons-row {
+    display: flex;
+    gap: 16px;
+    color: #555555; /* Tono gris de los iconos de la foto */
+    font-size: 1.5rem;
+}
+
+.exact-icons-row i {
+    cursor: pointer;
+    transition: color 0.15s;
+}
+
+.exact-icons-row i:hover {
+    color: #1a73e8;
+}
+
+/* Inputs y Áreas de texto estilizadas */
+.textarea-exact {
+    border: 1px solid #e1e5eb !important;
+    border-radius: 20px !important; /* Bordes ovalados en inputs */
+    padding: 16px 22px !important;
+    font-size: 0.95rem;
+    color: #333333;
+    resize: none;
+    box-shadow: none !important;
+}
+
+.input-exact {
+    border: 1px solid #e1e5eb !important;
+    border-radius: 50px !important; /* Input totalmente ovalado */
+    padding: 12px 24px !important;
+    font-size: 0.95rem;
+    color: #333333;
+    box-shadow: none !important;
+}
+
+.textarea-exact::placeholder, .input-exact::placeholder {
+    color: #94a3b8;
+}
+
+.textarea-exact:focus, .input-exact:focus {
+    border-color: #1a73e8 !important;
+}
+
+/* Barra Multimedia / Botón Subir */
+.upload-bar-exact {
+    border: 1px solid #e1e5eb;
+    border-radius: 50px; /* Estilo píldora */
+    padding: 8px 10px 8px 24px;
+    background-color: #ffffff;
+}
+
+.upload-placeholder-text {
+    color: #94a3b8;
+    font-size: 0.95rem;
+}
+
+.btn-subir-exact {
+    background-color: #ffffff;
+    color: #222222;
+    border: 1px solid #cbd5e1;
+    border-radius: 50px;
+    padding: 7px 28px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.btn-subir-exact:hover {
+    background-color: #f8fafc;
+}
+
+/* Botón Publicar Inferior */
+.btn-publicar-exact {
+    background-color: #1a73e8;
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 42px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background-color 0.2s;
+}
+
+.btn-publicar-exact:hover {
+    background-color: #155cb4;
+}
+
+/* PIE DE PÁGINA (FOOTER) */
+.exact-footer-section {
+    background-color: #acb5bd; /* El color gris mate exacto del footer */
+    color: #2c3e50;
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+
+.custom-footer-container {
+    padding-left: 3% !important;
+    padding-right: 3% !important;
+}
+
+.footer-brand-title {
+    font-weight: 700;
+    color: #111111;
+    font-size: 1.15rem;
+    margin-bottom: 4px;
+}
+
+.footer-brand-subtitle {
+    color: #334155;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+.footer-social-wrapper {
+    margin-top: 25px;
+}
+
+.social-label {
+    font-size: 0.85rem;
+    color: #111111;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.social-icons-row {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons-row a {
+    color: #111111;
+    font-size: 1.1rem;
+    transition: opacity 0.2s;
+}
+
+.social-icons-row a:hover {
+    opacity: 0.7;
+}
+
+/* Listas de enlaces del footer */
+.footer-list-title {
+    font-weight: 700;
+    color: #111111;
+    font-size: 0.95rem;
+    margin-bottom: 16px;
+}
+
+.footer-links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links-list li {
+    margin-bottom: 8px;
+}
+
+.footer-links-list li a {
+    color: #334155;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.footer-links-list li a:hover {
+    color: #000000;
+}
+
+/* ADAPTACIÓN PARA CELULARES Y TABLETS */
+@media (max-width: 991.98px) {
+    .exact-menu-list {
+        background-color: #0b1a30;
+        padding: 20px 0;
+        margin-top: 15px;
+        width: 100%;
+    }
+    .nav-link-custom {
+        display: block;
+        padding: 10px 0;
+        text-align: center;
+    }
+    .btn-crear-exact {
+        margin-top: 10px;
+        width: 70%;
+        text-align: center;
+    }
+    .main-card-exact {
+        padding: 30px 24px;
+    }
+}
+
+/* RESET Y GENERALES */
+body {
+    background-color: #f7f9fa;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    color: #1a1a1a;
+}
+
+/* NAVBAR BLANCO */
+.profile-navbar {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    box-shadow: 0 1px 15px rgba(0,0,0,0.02);
+}
+
+.custom-nav-container {
+    padding-left: 4% !important;
+    padding-right: 4% !important;
+}
+
+/* Caja de búsqueda ovalada */
+.search-box-wrapper {
+    position: relative;
+    width: 320px;
+}
+
+.exact-search-input {
+    background-color: #f1f3f5 !important;
+    border: none !important;
+    border-radius: 50px !important;
+    padding: 10px 16px 10px 42px !important;
+    font-size: 0.9rem;
+    color: #333333;
+}
+
+.search-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #747d8c;
+    font-size: 0.9rem;
+}
+
+/* Enlaces horizontales del navbar */
+.profile-menu-list {
+    gap: 15px;
+}
+
+.nav-link-custom {
+    text-decoration: none;
+    color: #4a5568;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 6px 10px;
+}
+
+.nav-link-custom:hover {
+    color: #000000;
+}
+
+/* Botón Crear Azul Ovalado */
+.btn-crear-exact {
+    background-color: #1a73e8 !important;
+    color: #ffffff !important;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 8px 32px !important;
+    border-radius: 50px !important;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.navbar-avatar-img {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* SECCIÓN CABECERA: PORTADA Y USER INFO */
+.cover-image-wrapper {
+    width: 100%;
+    height: 220px;
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+}
+
+.cover-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-meta-block {
+    position: relative;
+    margin-top: -40px; /* Eleva los elementos sobre la foto de portada */
+    z-index: 5;
+}
+
+.avatar-floating-wrapper {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 5px solid #ffffff;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+.main-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user-text-info {
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+
+.user-fullname {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0;
+    color: #111111;
+}
+
+.user-connections {
+    font-size: 0.9rem;
+    color: #5f6368;
+    margin: 0;
+}
+
+/* Botones Seguir y Mensaje */
+.btn-seguir-exact {
+    background-color: #1a73e8 !important;
+    color: #ffffff !important;
+    border-radius: 50px !important;
+    padding: 8px 30px !important;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.btn-mensaje-exact {
+    background-color: #ffffff !important;
+    color: #3c4043 !important;
+    border: 1px solid #dadce0 !important;
+    border-radius: 50px !important;
+    padding: 8px 30px !important;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS DE LA PESTAÑA PERFIL (CON PREFIJO .p- PARA NO HACER CONFLICTO)
+   ========================================================================== */
+
+/* NAVBAR BLANCO PERFIL */
+.p-navbar {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+    box-shadow: 0 1px 15px rgba(0,0,0,0.01);
+}
+
+.p-nav-container {
+    padding-left: 4.5% !important;
+    padding-right: 4.5% !important;
+}
+
+/* Buscador redondo */
+.p-search-wrapper {
+    position: relative;
+    width: 320px;
+}
+
+.p-search-input {
+    background-color: #f1f3f5 !important;
+    border: none !important;
+    border-radius: 50px !important;
+    padding: 10px 16px 10px 42px !important;
+    font-size: 0.9rem;
+    color: #333333;
+}
+
+.p-search-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #747d8c;
+    font-size: 0.9rem;
+}
+
+.p-menu-list {
+    gap: 15px;
+}
+
+.p-nav-link {
+    text-decoration: none;
+    color: #4a5568 !important;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 6px 10px;
+}
+
+.p-nav-link:hover {
+    color: #000000 !important;
+}
+
+/* Botón Crear del Perfil */
+.p-btn-crear {
+    background-color: #1a73e8 !important;
+    color: #ffffff !important;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 8px 32px !important;
+    border-radius: 50px !important;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.p-navbar-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* CABECERA: PORTADA Y SECCIÓN DE AVATAR FLOTANTE */
+.p-cover-wrapper {
+    width: 100%;
+    height: 220px;
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+}
+
+.p-cover-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.p-meta-block {
+    position: relative;
+    margin-top: -40px;
+    z-index: 5;
+}
+
+.p-avatar-floating {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 5px solid #ffffff;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+.p-main-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.p-user-text {
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+
+.p-user-fullname {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0;
+    color: #111111;
+}
+
+.p-user-connections {
+    font-size: 0.9rem;
+    color: #5f6368;
+    margin: 0;
+}
+
+/* Botonera Seguir / Mensaje */
+.p-btn-seguir {
+    background-color: #1a73e8 !important;
+    color: #ffffff !important;
+    border-radius: 50px !important;
+    padding: 8px 30px !important;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.p-btn-mensaje {
+    background-color: #ffffff !important;
+    color: #3c4043 !important;
+    border: 1px solid #dadce0 !important;
+    border-radius: 50px !important;
+    padding: 8px 30px !important;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* Pestañas sub-navegación */
+.p-tabs-list {
+    display: flex;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+.p-tab-link {
+    text-decoration: none;
+    color: #5f6368;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding-bottom: 12px;
+    display: inline-block;
+    position: relative;
+}
+
+.p-tab-link.active {
+    color: #000000;
+    font-weight: 700;
+}
+
+.p-tab-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #000000;
+}
+
+/* TARJETAS LATERALES E INFORMACIÓN */
+.p-sidebar-card, .p-bio-card, .p-feed-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: 1px solid #eef1f4;
+}
+
+.p-sidebar-title, .p-feed-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #111111;
+}
+
+.p-sidebar-btn {
+    background-color: #ffffff;
+    border: 1px solid #e1e5eb !important;
+    border-radius: 50px !important;
+    color: #333333 !important;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 8px 20px !important;
+}
+
+.p-sidebar-btn:hover {
+    background-color: #f8fafc;
+}
+
+/* Galería imágenes */
+.p-gallery-grid .p-gallery-box {
+    width: 100%;
+    height: 100px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.p-gallery-grid .p-gallery-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Cuadro Biografía */
+.p-input-bio {
+    border: 1px solid #e1e5eb !important;
+    border-radius: 50px !important;
+    padding: 10px 20px !important;
+    font-size: 0.9rem;
+    background-color: #ffffff;
+}
+
+/* DISEÑO DE PUBLICACIÓN Y MULTIMEDIA ASIMÉTRICA */
+.p-post-author {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #111111;
+}
+
+.p-post-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #202124;
+}
+
+.p-post-media .p-media-large {
+    width: 100%;
+    height: 320px;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.p-post-media .p-media-small {
+    width: 100%;
+    height: 152px;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.p-post-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* RESPONSIVO PARA LA VISTA DE PERFIL */
+@media (max-width: 991.98px) {
+    .p-search-wrapper {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    .p-menu-list {
+        background: #ffffff;
+        padding: 15px;
+        width: 100%;
+        text-align: center;
+    }
+    .p-meta-block {
+        align-items: center !important;
+        text-align: center;
+    }
+    .p-avatar-floating {
+        margin: 0 auto;
+    }
+    .p-user-text {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    .p-tabs-list {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 5px;
+    }
+    .p-post-media .p-media-large {
+        height: 200px;
+    }
+    .p-post-media .p-media-small {
+        height: 92px;
+    }
+}
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS DE LA PESTAÑA INICIO (CON PREFIJO .h- PARA AISLAMIENTO)
+   ========================================================================== */
+
+/* NAVBAR BLANCO INICIO */
+.h-navbar {
+    padding-top: 14px !important;
+    padding-bottom: 14px !important;
+    background-color: #ffffff !important;
+}
+
+.h-nav-container {
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+}
+
+.h-brand {
+    font-size: 1.3rem;
+    letter-spacing: -0.3px;
+}
+
+.h-menu-list {
+    gap: 20px;
+}
+
+.h-nav-link {
+    text-decoration: none;
+    color: #555555 !important;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.h-nav-link.active, .h-nav-link:hover {
+    color: #000000 !important;
+    font-weight: 600;
+}
+
+/* Botón Publicar Azul Superior */
+.h-btn-publicar {
+    background-color: #1a73e8 !important;
+    color: #ffffff !important;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 8px 30px !important;
+    border-radius: 50px !important;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* HERO SECTION / BUSCADOR CENTRAL */
+.h-hero-container {
+    padding-top: 60px;
+    padding-bottom: 30px;
+    padding-left: 5% !important;
+}
+
+.h-hero-title {
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: #111111;
+    line-height: 1.3;
+    letter-spacing: -0.5px;
+}
+
+/* Contenedor encapsulado del buscador con botón integrado */
+.h-search-container {
+    max-width: 620px;
+}
+
+.h-search-box {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 50px;
+    padding: 6px 8px 6px 20px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.01);
+}
+
+.h-search-input {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    font-size: 0.95rem;
+    color: #333333;
+}
+
+.h-search-input::placeholder {
+    color: #94a3b8;
+}
+
+.h-search-btn {
+    background-color: #1a73e8 !important;
+    color: #ffffff !important;
+    border-radius: 50px !important;
+    padding: 8px 32px !important;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* SECCIÓN SECCIONES (CATEGORÍAS) */
+.h-section-main-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #111111;
+}
+
+.h-category-card {
+    background-color: #ffffff;
+    border: 1px solid #eef1f4;
+    border-radius: 16px;
+    padding: 16px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #2d3748;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.h-category-card i {
+    color: #111111;
+    font-size: 1.1rem;
+}
+
+.h-category-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+/* SECCIÓN ALIMENTACIÓN / FEED ACTIIVDAD */
+.h-activity-card {
+    background-color: #ffffff;
+    border: 1px solid #eef1f4;
+    border-radius: 20px;
+    box-shadow: 0 1px 10px rgba(0,0,0,0.005);
+}
+
+.h-card-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.h-card-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #111111;
+}
+
+.h-card-subtitle {
+    font-size: 0.78rem;
+    font-weight: 500;
+}
+
+.h-card-body-text {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Micro galerías de imágenes de las tarjetas */
+.h-mini-gallery img {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+}
+
+.h-wide-media img {
+    height: 110px;
+    object-fit: cover;
+}
+
+/* Botón de exploración inferior */
+.h-btn-explore-more {
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 50px !important;
+    color: #333333 !important;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 8px 36px !important;
+}
+
+.h-btn-explore-more:hover {
+    background-color: #f8fafc;
+}
+
+/* AJUSTES RESPONSIVOS */
+@media (max-width: 991.98px) {
+    .h-menu-list {
+        background-color: #ffffff;
+        padding: 15px 0;
+        text-align: center;
+    }
+    .h-menu-list .nav-item {
+        padding: 6px 0;
+    }
+    .h-hero-title {
+        font-size: 1.8rem;
+    }
+    .h-search-box {
+        padding: 6px;
+    }
+    .h-search-btn {
+        padding: 8px 20px !important;
+    }
+}
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS DE LA PESTAÑA NOTIFICACIONES (CON PREFIJO .n-)
+   ========================================================================== */
+
+.n-body-bg {
+    background-color: #f4f6f8 !important;
+}
+
+/* SIDEBAR IZQUIERDO AZUL REY OSCURO */
+.n-sidebar {
+    width: 260px;
+    background-color: #0d2346;
+    min-height: 100vh;
+    position: sticky;
+    top: 0;
+}
+
+.n-sidebar-nav .nav-link {
+    font-size: 0.95rem;
+    padding: 10px 12px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.n-sidebar-nav .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #ffffff !important;
+}
+
+.n-sub-menu .nav-link {
+    font-size: 0.88rem !important;
+}
+
+/* TOPBAR SUPERIOR BLANCO */
+.n-topbar {
+    height: 70px;
+    box-shadow: 0 1px 10px rgba(0,0,0,0.01);
+}
+
+.n-search-wrapper {
+    width: 380px;
+}
+
+.n-search-input {
+    background-color: #f1f3f5 !important;
+    border: none !important;
+    border-radius: 50px !important;
+    padding: 10px 20px !important;
+    font-size: 0.9rem;
+}
+
+.n-btn-crear {
+    background-color: #1a73e8 !important;
+    color: #ffffff !important;
+    font-weight: 500;
+    font-size: 0.88rem;
+    padding: 8px 24px !important;
+    border-radius: 50px !important;
+}
+
+.n-topbar-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* CONTENEDOR DE TARJETAS (CARDS) */
+.n-main-title {
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: #111111;
+    letter-spacing: -0.5px;
+}
+
+.n-card {
+    background-color: #ffffff;
+    border: 1px solid #eef1f4;
+    border-radius: 24px;
+}
+
+/* Selector dropdown de tiempo */
+.n-btn-dropdown {
+    background-color: #f1f3f5 !important;
+    border: none !important;
+    border-radius: 50px !important;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #4a5568 !important;
+    padding: 6px 14px !important;
+}
+
+/* ELEMENTOS DE LA LISTA DE NOTIFICACIONES */
+.n-item-row {
+    border-bottom: 1px solid #f1f3f5;
+}
+
+.n-item-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.n-item-user {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #111111;
+}
+
+.n-item-action {
+    font-size: 0.85rem;
+}
+
+.n-item-time {
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Puntos de estado de color laterales */
+.n-dot-indicator {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.n-item-body {
+    font-size: 0.92rem;
+    color: #2d3748;
+}
+
+.n-item-actions {
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/* COLORES ESPECÍFICOS Y COMPONENTES DE FILTROS */
+.n-txt-purple {
+    color: #9b5de5;
+}
+
+/* Customización exacta de checkboxes nativos usando clases Bootstrap */
+.form-check-input {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.n-checkbox-success:checked { background-color: #198754; border-color: #198754; }
+.n-checkbox-warning:checked { background-color: #ffc107; border-color: #ffc107; }
+.n-checkbox-purple:checked  { background-color: #9b5de5; border-color: #9b5de5; }
+.n-checkbox-danger:checked  { background-color: #dc3545; border-color: #dc3545; }
+.n-checkbox-primary:checked { background-color: #1a73e8; border-color: #1a73e8; }
+
+.n-btn-filter-action {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0 !important;
+    color: #333333 !important;
+    border-radius: 50px !important;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 8px 12px !important;
+}
+
+.n-btn-filter-action:hover {
+    background-color: #f8fafc;
+}
+
+/* ADAPTACIÓN PARA MÓVILES */
+@media (max-width: 991.98px) {
+    .n-search-wrapper {
+        width: 100%;
+    }
+}
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS DE CONFIGURACIÓN DE PERFIL (CON PREFIJO .pc-)
+   ========================================================================== */
+
+.pc-body-bg {
+    background-color: #fafbfe !important;
+}
+
+.pc-brand {
+    font-size: 1.35rem;
+    letter-spacing: -0.3px;
+}
+
+/* CLASE DE DISEÑO BURBUJA AZUL UNIFICADA PARA AMBOS BOTONES */
+.pc-btn-blue-pill {
+    background-color: #1a73e8 !important;
+    color: #ffffff !important;
+    font-size: 0.92rem;
+    font-weight: 600;
+    border-radius: 50px !important;
+    border: none !important;
+    box-shadow: 0 4px 12px rgba(26,115,232,0.18) !important;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.pc-btn-blue-pill:hover {
+    background-color: #155cb8 !important;
+    color: #ffffff !important;
+    transform: translateY(-1px);
+}
+
+/* CONTENIDO DEL HERO */
+.pc-hero-container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.pc-hero-title {
+    font-size: 3.4rem;
+    font-weight: 800;
+    color: #0c2340;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+}
+
+.pc-hero-subtitle {
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: -0.2px;
+}
+
+/* COMPONENTE DE IMAGEN ASIMÉTRICA CON CAPAS */
+.pc-image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Bloque azul de fondo que sobresale */
+.pc-bg-layer {
+    position: absolute;
+    top: 15px;
+    left: 25px;
+    width: 100%;
+    height: 100%;
+    background-color: #1a73e8;
+    border-radius: 28px;
+    z-index: 1;
+}
+
+/* Imagen principal redondeada sobrepuesta */
+.pc-main-image {
+    position: relative;
+    border-radius: 28px;
+    z-index: 2;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    object-fit: cover;
+    width: 100%;
+    height: 320px;
+}
+
+/* SECCIÓN BANNER INFERIOR CELESTE */
+.pc-middle-banner {
+    background-color: #bce0fd !important;
+    border-top: 1px solid rgba(26,115,232,0.1);
+}
+
+.pc-banner-text {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #0c2340;
+    letter-spacing: -0.3px;
+}
+
+/* Insignia flotante del avatar de egresada */
+.pc-egresada-badge {
+    border: 1px solid rgba(255,255,255,0.8);
+}
+
+.pc-badge-avatar {
+    width: 24px;
+    height: 24px;
+    object-fit: cover;
+}
+
+.pc-badge-text {
+    font-size: 0.85rem;
+}
+
+/* MEDIA QUERIES PARA RESPONSIVO COMPLETO */
+@media (max-width: 991.98px) {
+    .pc-hero-title {
+        font-size: 2.5rem;
+    }
+    .pc-image-wrapper {
+        margin-top: 30px;
+        max-width: 90%;
+    }
+    .pc-main-image {
+        height: 240px;
+    }
+    .pc-banner-text {
+        font-size: 1.15rem;
+    }
+}

@@ -1,0 +1,13 @@
+target/
+*.war
+*.jar
+.nbproject/
+nbproject/
+build/
+.settings/
+.classpath
+.project
+.idea/
+*.iml
+Thumbs.db
+.DS_Store

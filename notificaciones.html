@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notificaciones - CERTUS Connect</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body class="n-body-bg">
+
+    <div class="container-fluid p-0 d-flex min-vh-100">
+        
+        <aside class="n-sidebar d-none d-lg-flex flex-column justify-content-between text-white p-4">
+            <div>
+                <h4 class="fw-bold mb-5 px-2">Navegaci&oacute;n</h4>
+                
+                <ul class="nav flex-column gap-2 n-sidebar-nav">
+                    <li class="nav-item">
+                        <a href="inicio.html" class="nav-link text-white-50"><i class="fa-solid fa-house me-3"></i> Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="d-flex justify-content-between align-items-center w-100">
+                            <a href="perfil.html" class="nav-link text-primary fw-bold flex-grow-1"><i class="fa-solid fa-user me-3"></i> Perfil</a>
+                            <i class="fa-solid fa-chevron-up text-primary fs-7 pe-2"></i>
+                        </div>
+                        <ul class="nav flex-column ms-4 ps-2 mt-1 gap-1 n-sub-menu">
+                            <li><a href="#" class="nav-link text-white-50 py-1">Feed</a></li>
+                            <li><a href="#" class="nav-link text-white-50 py-1">Conexiones</a></li>
+                            <li><a href="#" class="nav-link text-white-50 py-1">Eventos</a></li>
+                            <li><a href="#" class="nav-link text-white-50 py-1">Mensajes</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item mt-3">
+                        <div class="d-flex justify-content-between align-items-center w-100">
+                            <a href="#" class="nav-link text-warning fw-bold flex-grow-1"><i class="fa-solid fa-trophy me-3"></i> Concursos</a>
+                            <i class="fa-solid fa-chevron-up text-warning fs-7 pe-2"></i>
+                        </div>
+                        <ul class="nav flex-column ms-4 ps-2 mt-1 gap-1 n-sub-menu">
+                            <li><a href="#" class="nav-link text-white-50 py-1">Noticias</a></li>
+                            <li><a href="#" class="nav-link text-white-50 py-1">Resultados</a></li>
+                            <li><a href="#" class="nav-link text-white-50 py-1">Inscripciones</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="n-sidebar-footer border-top border-secondary pt-3">
+                <a href="#" class="text-white-50 text-decoration-none d-flex align-items-center px-2">
+                    <i class="fa-solid fa-circle-info me-3"></i> Ayuda y inicio
+                </a>
+            </div>
+        </aside>
+
+        <div class="flex-grow-1 d-flex flex-column">
+            
+            <nav class="navbar navbar-expand navbar-light bg-white n-topbar px-4 border-bottom sticky-top">
+                <div class="container-fluid p-0">
+                    <div class="n-search-wrapper me-auto">
+                        <input type="text" class="form-control n-search-input" placeholder="Buscar por nombre, empresa o etiqueta">
+                    </div>
+
+                    <div class="d-flex align-items-center gap-3">
+                        <a href="index.html" class="btn n-btn-crear">Crear</a>
+                        <a href="#" class="text-secondary fs-5 position-relative mx-1">
+                            <i class="fa-regular fa-comment-dots"></i>
+                        </a>
+                        <a href="#" class="text-primary fs-5 position-relative mx-1">
+                            <i class="fa-solid fa-bell"></i>
+                            <span class="position-absolute top-0 start-100 translate-middle p-1 bg-primary border border-light rounded-circle"></span>
+                        </a>
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150" alt="Avatar Usuario" class="n-topbar-avatar ms-2">
+                    </div>
+                </div>
+            </nav>
+
+            <main class="p-4 p-xl-5 flex-grow-1">
+                <div class="container-fluid p-0">
+                    <h1 class="n-main-title mb-4">Notificaciones</h1>
+
+                    <div class="row g-4">
+                        <section class="col-12 col-xl-8">
+                            <div class="n-card p-4">
+                                
+                                <div class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-3">
+                                    <h5 class="fw-bold m-0 text-dark">Recientes</h5>
+                                    <div class="dropdown">
+                                        <button class="btn btn-sm n-btn-dropdown dropdown-toggle px-3" type="button" data-bs-toggle="dropdown">
+                                            Esta semana
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-end">
+                                            <li><a class="dropdown-item" href="#">Hoy</a></li>
+                                            <li><a class="dropdown-item" href="#">Ayer</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex flex-column n-list-container">
+                                    
+                                    <div class="n-item-row py-3 d-flex align-items-start gap-3">
+                                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150" alt="User" class="n-item-avatar">
+                                        <div class="flex-grow-1">
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div>
+                                                    <span class="n-item-user">Carlos Vega</span>
+                                                    <p class="n-item-action text-muted m-0">en publicaci&oacute;n <span class="text-success fw-bold"><i class="fa-solid fa-box-open fs-7"></i> CS360</span></p>
+                                                </div>
+                                                <span class="n-item-time text-muted">1h <span class="n-dot-indicator bg-success"></span></span>
+                                            </div>
+                                            <p class="n-item-body mt-2 mb-2">&iexcl;Gran aporte!</p>
+                                            <div class="d-flex gap-3 n-item-actions text-muted">
+                                                <span class="cursor-pointer">Me</span>
+                                                <span class="cursor-pointer">Respon</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="n-item-row py-3 d-flex align-items-start gap-3">
+                                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=150" alt="User" class="n-item-avatar">
+                                        <div class="flex-grow-1">
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div>
+                                                    <span class="n-item-user">Mar&iacute;a L&oacute;pez</span>
+                                                    <p class="n-item-action text-muted m-0">en concurso <span class="text-danger fw-bold"><i class="fa-solid fa-skull-crossbones fs-7"></i> Hackfest</span></p>
+                                                </div>
+                                                <span class="n-item-time text-muted">2h <span class="n-dot-indicator bg-danger"></span></span>
+                                            </div>
+                                            <p class="n-item-body mt-2 mb-2">&iexcl;Excelente, felicidades!</p>
+                                            <div class="d-flex gap-3 n-item-actions text-muted">
+                                                <span class="cursor-pointer">Me</span>
+                                                <span class="cursor-pointer">Respon</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="n-item-row py-3 d-flex align-items-start gap-3">
+                                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=150" alt="User" class="n-item-avatar">
+                                        <div class="flex-grow-1">
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div>
+                                                    <span class="n-item-user">Ana G&oacute;mez coment&oacute; un publicaci&oacute;n o mentiado...</span>
+                                                    <p class="n-item-action text-muted m-0">en concurso <span class="text-danger fw-bold"><i class="fa-solid fa-heart fs-7"></i> Hackfest</span></p>
+                                                </div>
+                                                <span class="n-item-time text-muted">1h <span class="n-dot-indicator bg-success"></span></span>
+                                            </div>
+                                            <p class="n-item-body mt-2 mb-2">&iexcl;Excelente, felicidades!</p>
+                                            <div class="d-flex gap-3 n-item-actions text-muted">
+                                                <span class="cursor-pointer">Me</span>
+                                                <span class="cursor-pointer">Respon</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="n-item-row py-3 d-flex align-items-start gap-3 border-0">
+                                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150" alt="User" class="n-item-avatar">
+                                        <div class="flex-grow-1">
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div>
+                                                    <span class="n-item-user">Jorge Ruiz te mencion&oacute; un Jorge Ruiz menciona ...</span>
+                                                    <p class="n-item-action text-muted m-0">en concurso <span class="text-danger fw-bold"><i class="fa-solid fa-ghost fs-7"></i> Jorge Ruiz</span></p>
+                                                </div>
+                                                <span class="n-item-time text-muted">2h <span class="n-dot-indicator bg-warning"></span></span>
+                                            </div>
+                                            <p class="n-item-body mt-2 mb-2">&iexcl;Excelente, felicidades!</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </section>
+
+                        <aside class="col-12 col-xl-4">
+                            <div class="n-card p-4">
+                                <h5 class="fw-bold mb-4 text-dark">Filtros</h5>
+                                
+                                <div class="d-flex flex-column gap-3 mb-4">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="n-filter-label text-success fw-semibold">Comentarios</span>
+                                        <input class="form-check-input n-checkbox-success" type="checkbox" checked>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="n-filter-label text-warning fw-semibold">Me gusta</span>
+                                        <input class="form-check-input n-checkbox-warning" type="checkbox" checked>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="n-filter-label n-txt-purple fw-semibold">Reseñas</span>
+                                        <input class="form-check-input n-checkbox-purple" type="checkbox" checked>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="n-filter-label text-danger fw-semibold">Menciones</span>
+                                        <input class="form-check-input n-checkbox-danger" type="checkbox" checked>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="n-filter-label text-primary fw-semibold">Inscripciones</span>
+                                        <input class="form-check-input n-checkbox-primary" type="checkbox" checked>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="n-filter-label text-danger fw-semibold">Mensajes</span>
+                                        <input class="form-check-input n-checkbox-danger" type="checkbox" checked>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex gap-2">
+                                    <button class="btn n-btn-filter-action w-50">Seleccionar</button>
+                                    <button class="btn n-btn-filter-action w-50">Deseleccionar</button>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+
+                </div>
+            </main>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

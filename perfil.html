@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - CERTUS Connect</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white p-navbar sticky-top border-bottom">
+        <div class="container-fluid p-nav-container">
+            <div class="p-search-wrapper me-auto">
+                <i class="fa-solid fa-magnifying-glass p-search-icon"></i>
+                <input type="text" class="form-control p-search-input" placeholder="Buscar por nombre, empresa o etiqueta">
+            </div>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#menuPerfil">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="menuPerfil">
+                <ul class="navbar-nav align-items-center p-menu-list">
+                    <li class="nav-item"><a class="p-nav-link" href="#">Explorar</a></li>
+                    <li class="nav-item"><a class="p-nav-link" href="#">Estudio</a></li>
+                    <li class="nav-item"><a class="p-nav-link" href="#">Novedad</a></li>
+                    <li class="nav-item"><a class="p-nav-link" href="notificaciones.html">Notificaciones</a></li>
+                    <li class="nav-item ms-lg-2">
+                        <a class="p-btn-crear" href="index.html">Crear</a>
+                    </li>
+                    <li class="nav-item ms-lg-3 d-none d-lg-block">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150" alt="Mini Avatar" class="p-navbar-avatar">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="p-header-container container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-12 col-xl-10">
+                <div class="p-cover-wrapper">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200" alt="Portada" class="p-cover-img">
+                </div>
+                
+                <div class="p-meta-block d-flex flex-column flex-md-row justify-content-between align-items-start px-4">
+                    <div class="d-flex align-items-end position-relative">
+                        <div class="p-avatar-floating">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=300" alt="Avatar Alumno" class="p-main-avatar">
+                        </div>
+                        <div class="p-user-text">
+                            <h2 class="p-user-fullname">Alumno CERTUS</h2>
+                            <p class="p-user-connections">120 conexiones</p>
+                        </div>
+                    </div>
+                    
+                    <div class="p-action-btns d-flex gap-2 mt-3 mt-md-0">
+                        <button class="btn p-btn-seguir">Seguir</button>
+                        <button class="btn p-btn-mensaje">Mensaje</button>
+                    </div>
+                </div>
+
+                <div class="p-sub-tabs mt-4 border-bottom px-2">
+                    <ul class="nav p-tabs-list">
+                        <li class="nav-item"><a class="p-tab-link active" href="#">Publicicas</a></li>
+                        <li class="nav-item"><a class="p-tab-link" href="#">Acerca de</a></li>
+                        <li class="nav-item"><a class="p-tab-link" href="#">Fotos</a></li>
+                        <li class="nav-item"><a class="p-tab-link" href="#">Video</a></li>
+                        <li class="nav-item"><a class="p-tab-link" href="#">Siguiendo</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-4">
+        <div class="row justify-content-center g-4">
+            <div class="col-12 col-xl-10">
+                <div class="row g-4">
+                    
+                    <aside class="col-12 col-md-4">
+                        
+                        <div class="p-sidebar-card p-4 mb-4">
+                            <h5 class="p-sidebar-title mb-3">Información básica</h5>
+                            <div class="d-grid gap-2">
+                                <button class="btn p-sidebar-btn">Agregar</button>
+                                <button class="btn p-sidebar-btn">Editar</button>
+                                <button class="btn p-sidebar-btn">Intereses</button>
+                            </div>
+                        </div>
+
+                        <div class="p-sidebar-card p-4">
+                            <h5 class="p-sidebar-title mb-3">Galer&atilde;a</h5>
+                            <div class="row g-2 p-gallery-grid">
+                                <div class="col-6">
+                                    <div class="p-gallery-box">
+                                        <img src="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?q=80&w=300" alt="Gallery 1">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="p-gallery-box">
+                                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=300" alt="Gallery 2">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="p-gallery-box">
+                                        <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?q=80&w=300" alt="Gallery 3">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="p-gallery-box">
+                                        <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=300" alt="Gallery 4">
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn p-sidebar-btn w-100 mt-3">M&atilde;js</button>
+                        </div>
+
+                    </aside>
+
+                    <section class="col-12 col-md-8">
+                        
+                        <div class="p-bio-card p-3 mb-4 d-flex align-items-center gap-3">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150" alt="Mini bio img" class="rounded-circle" style="width: 35px; height: 35px; object-fit: cover;">
+                            <input type="text" class="form-control p-input-bio" placeholder="Escribe tu biografía académica y profesional">
+                        </div>
+
+                        <h4 class="p-feed-title mb-3">Publicaciones</h4>
+
+                        <article class="p-feed-card p-4">
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150" alt="Post User" class="rounded-circle" style="width: 40px; height: 40px; object-fit: cover;">
+                                <h6 class="p-post-author m-0">Nombre completo</h6>
+                            </div>
+
+                            <p class="p-post-text mb-4">
+                                Participó en el evento evento CERTUS: presentamos una herramienta para gestionar prácticas, compartimos código y documentación. Aprendió sobre integración continua, recibimos feedback muy útil y ya estamos preparando la demo para el próximo evento.
+                            </p>
+
+                            <div class="row g-3 p-post-media">
+                                <div class="col-7">
+                                    <div class="p-media-large">
+                                        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=500" alt="Estatua/Trofeo Oro">
+                                    </div>
+                                </div>
+                                <div class="col-5 d-flex flex-column gap-3">
+                                    <div class="p-media-small flex-grow-1">
+                                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=400" alt="Pantalla código">
+                                    </div>
+                                    <div class="p-media-small flex-grow-1">
+                                        <img src="https://images.unsplash.com/photo-1521791136066-8984c1698265?q=80&w=400" alt="Apretón de manos">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-center mt-4">
+                                <button class="btn p-sidebar-btn px-5">M&atilde;js</button>
+                            </div>
+                        </article>
+
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="exact-footer-section">
+        <div class="container custom-footer-container">
+            <div class="row g-4 justify-content-between">
+                <div class="col-12 col-md-4">
+                    <h5 class="footer-brand-title">CERTUS Connect</h5>
+                    <p class="footer-brand-subtitle">Red social para alumnos y egresados de TI</p>
+                    <div class="footer-social-wrapper">
+                        <p class="social-label">Mantente en contacto:</p>
+                        <div class="social-icons-row">
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 col-lg-1-5">
+                    <h6 class="footer-list-title">Producto</h6>
+                    <ul class="footer-links-list">
+                        <li><a href="#">Huncipals</a></li>
+                        <li><a href="#">Integraciones</a></li>
+                        <li><a href="#">Empresas</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 col-lg-1-5">
+                    <h6 class="footer-list-title">Precios</h6>
+                    <ul class="footer-links-list">
+                        <li><a href="#">Versión gratis</a></li>
+                        <li><a href="#">Comparar</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 col-lg-1-5">
+                    <h6 class="footer-list-title">Instituto</h6>
+                    <ul class="footer-links-list">
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">Empleos</a></li>
+                        <li><a href="#">Eventos</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 col-lg-1-5">
+                    <h6 class="footer-list-title">Recursos</h6>
+                    <ul class="footer-links-list">
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Tentro de Esporte</a></li>
+                        <li><a href="#">Soporte</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 col-lg-1-5">
+                    <h6 class="footer-list-title">Soporte</h6>
+                    <ul class="footer-links-list">
+                        <li><a href="#">Chif</a></li>
+                        <li><a href="#">Sugumiarias</a></li>
+                        <li><a href="#">Formulario</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
