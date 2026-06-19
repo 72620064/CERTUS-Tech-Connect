@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CERTUS Connect</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark certus-navbar">
+        <div class="container-fluid custom-nav-container">
+            <a class="navbar-brand-custom" href="index.html">
+                <span class="brand-bold">CERTUS</span> <span class="brand-light">Connect</span>
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#menuCertus">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menuCertus">
+                <ul class="navbar-nav ms-auto align-items-center exact-menu-list">
+                    <li class="nav-item">
+                        <a class="nav-link-custom" href="inicio.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link-custom" href="#">Filtros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link-custom" href="#">Eventos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link-custom" href="perfil.html">Perfil</a>
+                    </li>
+                    <li class="nav-item ms-lg-4">
+                        <a class="btn-crear-exact" href="registro.html" id="navBtnCrear">Registrate</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-banner-section text-center">
+        <h1 class="main-title-exact">Red de alumnos y egresados</h1>
+    </header>
+
+    <main class="container form-wrapper-container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-7 col-xl-6">
+                
+                <div class="main-card-exact">
+                    
+                    <div class="card-field-group">
+                        <label class="field-label-exact">Acceso y verificación</label>
+                        <div class="exact-icons-row">
+                            <i class="fa-solid fa-graduation-cap" title="Educación"></i>
+                            <i class="fa-solid fa-user-check" title="Verificado"></i>
+                            <i class="fa-solid fa-user-plus" title="Conectar"></i>
+                            <i class="fa-solid fa-hashtag" title="Hashtags"></i>
+                            <i class="fa-solid fa-bell" title="Notificaciones"></i>
+                        </div>
+                    </div>
+
+                    <div class="card-field-group">
+                        <label for="experienceText" class="field-label-exact">Comparte tu experiencia</label>
+                        <textarea class="form-control textarea-exact" id="experienceText" rows="3" placeholder="Escribe sobre tu proyecto, duda o logro. Puedes incluir enlaces, fragmentos de código y más..."></textarea>
+                    </div>
+
+                    <div class="card-field-group">
+                        <label for="postTitle" class="field-label-exact">Título de la publicación</label>
+                        <input type="text" class="form-control input-exact" id="postTitle" placeholder="Buscar por nombre, empresa o etiqueta">
+                    </div>
+
+                    <div class="card-field-group">
+                        <label class="field-label-exact">Agregar multimedia</label>
+                        <div class="upload-bar-exact d-flex justify-content-between align-items-center">
+                            <span class="upload-placeholder-text">Arrastra o sube imagen</span>
+                            <button class="btn-subir-exact" type="button" id="btnSubir">Subir</button>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <button class="btn-publicar-exact" id="btnPublicar">Publicar</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="exact-footer-section">
+        <div class="container custom-footer-container">
+            <div class="row g-4 justify-content-between">
+                
+                <div class="col-12 col-md-4">
+                    <h5 class="footer-brand-title">CERTUS Connect</h5>
+                    <p class="footer-brand-subtitle">Red social para alumnos y egresados de TI</p>
+                    <div class="footer-social-wrapper">
+                        <p class="social-label">Mantente en contacto:</p>
+                        <div class="social-icons-row">
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-6 col-sm-4 col-md-2 col-lg-1-5">
+                    <h6 class="footer-list-title">Producto</h6>
+                    <ul class="footer-links-list">
+                        <li><a href="#">Funciones</a></li>
+                        <li><a href="#">Integraciones</a></li>
+                        <li><a href="#">Empresas</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-sm-4 col-md-2 col-lg-1-5">
+                    <h6 class="footer-list-title">Precios</h6>
+                    <ul class="footer-links-list">
+                        <li><a href="#">Versión gratis</a></li>
+                        <li><a href="#">Comparar</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-sm-4 col-md-2 col-lg-1-5">
+                    <h6 class="footer-list-title">Instituto</h6>
+                    <ul class="footer-links-list">
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">Empleos</a></li>
+                        <li><a href="#">Eventos</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-sm-4 col-md-2 col-lg-1-5">
+                    <h6 class="footer-list-title">Recursos</h6>
+                    <ul class="footer-links-list">
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Centro de Soporte</a></li>
+                        <li><a href="#">Soporte</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-sm-4 col-md-2 col-lg-1-5">
+                    <h6 class="footer-list-title">Soporte</h6>
+                    <ul class="footer-links-list">
+                        <li><a href="#">Chat</a></li>
+                        <li><a href="#">Sugerencias</a></li>
+                        <li><a href="#">Formulario</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
