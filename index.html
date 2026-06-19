@@ -3,98 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CERTUS Connect</title>
+    <title>Inicio - CERTUS Connect</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="CSS/styles.css">
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark certus-navbar">
-        <div class="container-fluid custom-nav-container">
-            <a class="navbar-brand-custom" href="#">
-                <span class="brand-bold">CERTUS</span> <span class="brand-light">Connect</span>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white h-navbar border-bottom sticky-top">
+        <div class="container-fluid h-nav-container">
+            <a class="navbar-brand text-dark fw-bold h-brand" href="#">
+                CERTUS <span class="fw-light text-secondary">Connect</span>
             </a>
 
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#menuCertus">
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#menuInicio">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="menuCertus">
-                <ul class="navbar-nav ms-auto align-items-center exact-menu-list">
-                    <li class="nav-item">
-                        <a class="nav-link-custom" href="inicio.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link-custom" href="#">Filtros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link-custom" href="#">Eventos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link-custom" href="perfil.html">Perfil</a>
-                    </li>
-                    <li class="nav-item ms-lg-4">
-                        <a class="btn-crear-exact" href="registro.html" id="navBtnCrear">Registrate</a>
+            <div class="collapse navbar-collapse justify-content-end" id="menuInicio">
+                <ul class="navbar-nav align-items-center h-menu-list">
+                    <li class="nav-item"><a class="h-nav-link active" href="#">Inicio</a></li>
+                    <li class="nav-item"><a class="h-nav-link" href="#">Explorar</a></li>
+                    <li class="nav-item"><a class="h-nav-link" href="#">Acerca</a></li>
+                    <li class="nav-item"><a class="h-nav-link" href="perfil.html">Perfil</a></li>
+                    <li class="nav-item ms-lg-2">
+                        <a class="h-btn-publicar" href="publicacion.html">Publicar</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <header class="hero-banner-section text-center">
-        <h1 class="main-title-exact">Red de alumnos y egresados</h1>
-    </header>
+    <header class="container h-hero-container text-start">
+        <h1 class="h-hero-title">
+            La red de CERTUS para alumnos y<br>egresados de TI. Regístrate, conecta y comparte
+        </h1>
 
-    <main class="container form-wrapper-container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-10 col-lg-7 col-xl-6">
-                
-                <div class="main-card-exact">
-                    
-                    <div class="card-field-group">
-                        <label class="field-label-exact">Acceso y verificación</label>
-                        <div class="exact-icons-row">
-                            <i class="fa-solid fa-graduation-cap" title="Educación"></i>
-                            <i class="fa-solid fa-user-check" title="Verificado"></i>
-                            <i class="fa-solid fa-user-plus" title="Conectar"></i>
-                            <i class="fa-solid fa-hashtag" title="Hashtags"></i>
-                            <i class="fa-solid fa-bell" title="Notificaciones"></i>
-                        </div>
-                    </div>
-
-                    <div class="card-field-group">
-                        <label for="experienceText" class="field-label-exact">Comparte tu experiencia</label>
-                        <textarea class="form-control textarea-exact" id="experienceText" rows="3" placeholder="Escribe sobre tu proyecto, duda o logro. Puedes incluir enlaces, fragmentos de código y más..."></textarea>
-                    </div>
-
-                    <div class="card-field-group">
-                        <label for="postTitle" class="field-label-exact">Título de la publicación</label>
-                        <input type="text" class="form-control input-exact" id="postTitle" placeholder="Buscar por nombre, empresa o etiqueta">
-                    </div>
-
-                    <div class="card-field-group">
-                        <label class="field-label-exact">Agregar multimedia</label>
-                        <div class="upload-bar-exact d-flex justify-content-between align-items-center">
-                            <span class="upload-placeholder-text">Arrastra o sube imagen</span>
-                            <button class="btn-subir-exact" type="button" id="btnSubir">Subir</button>
-                        </div>
-                    </div>
-
-                    <div class="pt-2">
-                        <button class="btn-publicar-exact" id="btnPublicar">Publicar</button>
-                    </div>
-
-                </div>
-
+        <div class="h-search-container mt-4">
+            <div class="h-search-box">
+                <input type="text" class="form-control h-search-input" placeholder="Buscar por nombre, empresa o etiqueta">
+                <button class="btn h-search-btn" type="button">Buscar</button>
             </div>
         </div>
-    </main>
+    </header>
+
+    <section class="container h-sections-wrapper my-5">
+        <h3 class="h-section-main-title mb-4">Secciones</h3>
+        
+        <div class="row g-3">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="h-category-card"><i class="fa-solid fa-user-graduate me-3"></i> Programas</div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="h-category-card"><i class="fa-solid fa-briefcase me-3"></i> Empleo & Pr&aacute;cticas</div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="h-category-card"><i class="fa-solid fa-calendar-days me-3"></i> Eventos</div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="h-category-card"><i class="fa-solid fa-trophy me-3"></i> Concursos</div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="h-category-card"><i class="fa-solid fa-laptop-code me-3"></i> Proyectos & Portafolio</div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="h-category-card"><i class="fa-solid fa-screwdriver-wrench me-3"></i> Herramientas & Tech</div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="h-category-card"><i class="fa-solid fa-users me-3"></i> Red de Egresados</div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="h-category-card"><i class="fa-solid fa-building-columns me-3"></i> Servicios del Campus</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container h-feed-wrapper my-5">
+        <h3 class="h-section-main-title mb-4">Actividad reciente</h3>
+
+        <div class="row g-4">
+            
+            <div class="col-12 col-md-6 col-lg-3 d-flex flex-column gap-4">
+                <div class="h-activity-card p-3">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100" alt="Ana" class="h-card-avatar">
+                        <div class="h-card-icons text-muted fs-6"><i class="fa-regular fa-thumbs-up me-2"></i><i class="fa-regular fa-comment me-2"></i><i class="fa-regular fa-bookmark"></i></div>
+                    </div>
+                    <h6 class="h-card-name m-0">Ana R.</h6>
+                    <p class="h-card-subtitle text-primary mb-3">public&Oacute; en Proyectos</p>
+                    <p class="h-card-body-text text-secondary">Acabo de subir mi proyecto final.</p>
+                </div>
+                <div class="h-activity-card p-3">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=100" alt="Diego" class="h-card-avatar">
+                        <div class="h-card-icons text-muted fs-6"><i class="fa-regular fa-thumbs-up me-2"></i><i class="fa-regular fa-heart me-2"></i><i class="fa-regular fa-bookmark"></i></div>
+                    </div>
+                    <h6 class="h-card-name m-0">Diego</h6>
+                    <p class="h-card-subtitle text-muted mb-3">Posted a code snippet</p>
+                    <p class="h-card-body-text text-secondary mb-3">Built a REST API demo</p>
+                    <div class="d-flex gap-2 h-mini-gallery">
+                        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=100" class="rounded">
+                        <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=100" class="rounded">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3 d-flex flex-column gap-4">
+                <div class="h-activity-card p-3">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?q=80&w=100" alt="Luis" class="h-card-avatar">
+                        <div class="h-card-icons text-muted fs-6"><i class="fa-regular fa-heart me-2"></i><i class="fa-regular fa-comment me-2"></i><i class="fa-regular fa-bookmark"></i></div>
+                    </div>
+                    <h6 class="h-card-name m-0">Luis M.</h6>
+                    <p class="h-card-subtitle text-primary mb-3">public&Oacute; en Eventos</p>
+                    <p class="h-card-body-text text-secondary mb-3">Gran charla sobre IA, muy &Uacute;til.</p>
+                    <div class="d-flex gap-2 h-mini-gallery">
+                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=100" class="rounded">
+                        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=100" class="rounded">
+                    </div>
+                </div>
+                <div class="h-activity-card p-3">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?q=80&w=100" alt="Marco" class="h-card-avatar">
+                        <div class="h-card-icons text-muted fs-6"><i class="fa-regular fa-share-from-square me-2"></i><i class="fa-regular fa-bookmark"></i></div>
+                    </div>
+                    <h6 class="h-card-name m-0">Marco</h6>
+                    <p class="h-card-subtitle text-dark fw-bold mb-3">Shared internship opportunity</p>
+                    <p class="h-card-body-text text-secondary">Company seeking backend interns</p>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3 d-flex flex-column gap-4">
+                <div class="h-activity-card p-3">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100" alt="Matias" class="h-card-avatar">
+                        <div class="h-card-icons text-muted fs-6"><i class="fa-regular fa-thumbs-up me-2"></i><i class="fa-regular fa-bookmark"></i></div>
+                    </div>
+                    <h6 class="h-card-name m-0">Mar&Iacute;a P.</h6>
+                    <p class="h-card-subtitle text-success mb-3">Profile verified</p>
+                    <p class="h-card-body-text text-secondary">Institutional email confirmed</p>
+                </div>
+                <div class="h-activity-card p-3">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100" alt="Natalia" class="h-card-avatar">
+                        <div class="h-card-icons text-muted fs-6"><i class="fa-regular fa-calendar me-2"></i><i class="fa-regular fa-bookmark"></i></div>
+                    </div>
+                    <h6 class="h-card-name m-0">Natalia</h6>
+                    <p class="h-card-subtitle text-muted mb-3">Created an event</p>
+                    <p class="h-card-body-text text-secondary mb-3">Hackathon info session &reg;egister</p>
+                    <div class="h-wide-media">
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=200" class="w-100 rounded">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3 d-flex flex-column gap-4">
+                <div class="h-activity-card p-3">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100" alt="Camila" class="h-card-avatar">
+                        <div class="h-card-icons text-muted fs-6"><i class="fa-regular fa-envelope me-2"></i><i class="fa-regular fa-bookmark"></i></div>
+                    </div>
+                    <h6 class="h-card-name m-0">Camila</h6>
+                    <p class="h-card-subtitle text-dark fw-bold mb-3">Joined Cohort 2024</p>
+                    <p class="h-card-body-text text-secondary mb-3">Looking forward to collaborating</p>
+                    <div class="d-flex gap-2 h-mini-gallery">
+                        <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=100" class="rounded">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=100" class="rounded">
+                    </div>
+                </div>
+                <div class="h-activity-card p-3">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=100" alt="Sofia" class="h-card-avatar">
+                        <div class="h-card-icons text-muted fs-6"><i class="fa-regular fa-star me-2"></i><i class="fa-regular fa-heart"></i></div>
+                    </div>
+                    <h6 class="h-card-name m-0">Sofia</h6>
+                    <p class="h-card-subtitle text-muted mb-3">Recommended study group</p>
+                    <p class="h-card-body-text text-secondary">Great space for practice and collaboration</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="text-center mt-5">
+            <button class="btn h-btn-explore-more px-5">Explore</button>
+        </div>
+    </section>
 
     <footer class="exact-footer-section">
         <div class="container custom-footer-container">
             <div class="row g-4 justify-content-between">
-                
                 <div class="col-12 col-md-4">
                     <h5 class="footer-brand-title">CERTUS Connect</h5>
                     <p class="footer-brand-subtitle">Red social para alumnos y egresados de TI</p>
@@ -107,7 +204,6 @@
                         </div>
                     </div>
                 </div>
-                
                 <div class="col-6 col-sm-4 col-md-2 col-lg-1-5">
                     <h6 class="footer-list-title">Producto</h6>
                     <ul class="footer-links-list">
@@ -116,7 +212,6 @@
                         <li><a href="#">Empresas</a></li>
                     </ul>
                 </div>
-
                 <div class="col-6 col-sm-4 col-md-2 col-lg-1-5">
                     <h6 class="footer-list-title">Precios</h6>
                     <ul class="footer-links-list">
@@ -124,7 +219,6 @@
                         <li><a href="#">Comparar</a></li>
                     </ul>
                 </div>
-
                 <div class="col-6 col-sm-4 col-md-2 col-lg-1-5">
                     <h6 class="footer-list-title">Instituto</h6>
                     <ul class="footer-links-list">
@@ -133,30 +227,17 @@
                         <li><a href="#">Eventos</a></li>
                     </ul>
                 </div>
-
                 <div class="col-6 col-sm-4 col-md-2 col-lg-1-5">
                     <h6 class="footer-list-title">Recursos</h6>
                     <ul class="footer-links-list">
                         <li><a href="#">Blog</a></li>
                         <li><a href="#">Centro de Soporte</a></li>
-                        <li><a href="#">Soporte</a></li>
                     </ul>
                 </div>
-
-                <div class="col-6 col-sm-4 col-md-2 col-lg-1-5">
-                    <h6 class="footer-list-title">Soporte</h6>
-                    <ul class="footer-links-list">
-                        <li><a href="#">Chat</a></li>
-                        <li><a href="#">Sugerencias</a></li>
-                        <li><a href="#">Formulario</a></li>
-                    </ul>
-                </div>
-
             </div>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
 </body>
 </html>
