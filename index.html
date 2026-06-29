@@ -3,37 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio - CERTUS Connect</title>
+    <title>CERTUS Connect</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="CSS/styles.css">
 </head>
 <body>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-white h-navbar border-bottom sticky-top">
-        <div class="container-fluid h-nav-container">
-            <a class="navbar-brand text-dark fw-bold h-brand" href="#">
-                CERTUS <span class="fw-light text-secondary">Connect</span>
-            </a>
-
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#menuInicio">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse justify-content-end" id="menuInicio">
-                <ul class="navbar-nav align-items-center h-menu-list">
-                    <li class="nav-item"><a class="h-nav-link active" href="#">Inicio</a></li>
-                    <li class="nav-item"><a class="h-nav-link" href="#">Explorar</a></li>
-                    <li class="nav-item"><a class="h-nav-link" href="#">Acerca</a></li>
-                    <li class="nav-item"><a class="h-nav-link" href="perfil.html">Perfil</a></li>
-                    <li class="nav-item ms-lg-2">
-                        <a class="h-btn-publicar" href="publicacion.html">Publicar</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
+    <div id="global-navbar"></div>
+    
     <header class="container h-hero-container text-start">
         <h1 class="h-hero-title">
             La red de CERTUS para alumnos y<br>egresados de TI. Regístrate, conecta y comparte
@@ -181,63 +158,13 @@
                     <p class="h-card-body-text text-secondary">Great space for practice and collaboration</p>
                 </div>
             </div>
-
         </div>
-
         <div class="text-center mt-5">
             <button class="btn h-btn-explore-more px-5">Explore</button>
         </div>
     </section>
 
-    <footer class="exact-footer-section">
-        <div class="container custom-footer-container">
-            <div class="row g-4 justify-content-between">
-                <div class="col-12 col-md-4">
-                    <h5 class="footer-brand-title">CERTUS Connect</h5>
-                    <p class="footer-brand-subtitle">Red social para alumnos y egresados de TI</p>
-                    <div class="footer-social-wrapper">
-                        <p class="social-label">Mantente en contacto:</p>
-                        <div class="social-icons-row">
-                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-4 col-md-2 col-lg-1-5">
-                    <h6 class="footer-list-title">Producto</h6>
-                    <ul class="footer-links-list">
-                        <li><a href="#">Funciones</a></li>
-                        <li><a href="#">Integraciones</a></li>
-                        <li><a href="#">Empresas</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-sm-4 col-md-2 col-lg-1-5">
-                    <h6 class="footer-list-title">Precios</h6>
-                    <ul class="footer-links-list">
-                        <li><a href="#">Versión gratis</a></li>
-                        <li><a href="#">Comparar</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-sm-4 col-md-2 col-lg-1-5">
-                    <h6 class="footer-list-title">Instituto</h6>
-                    <ul class="footer-links-list">
-                        <li><a href="#">Sobre</a></li>
-                        <li><a href="#">Empleos</a></li>
-                        <li><a href="#">Eventos</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-sm-4 col-md-2 col-lg-1-5">
-                    <h6 class="footer-list-title">Recursos</h6>
-                    <ul class="footer-links-list">
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Centro de Soporte</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="JS/script.js"></script>
 </body>
 </html>

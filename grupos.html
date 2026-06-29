@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupos - CERTUS Connect</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="CSS/styles.css">
+    
+</head>
+<body>
+
+    <div id="global-navbar"></div>
+
+    <div class="container-fluid main-wrapper">
+        <div class="row">
+            
+            <aside class="col-12 col-md-4 col-xl-3 sidebar-groups d-flex flex-column">
+                
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h2 class="sidebar-title m-0">Grupos</h2>
+                    <a href="#" class="btn-settings-sidebar" title="Configuración de grupos">
+                        <i class="fa-solid fa-gear"></i>
+                    </a>
+                </div>
+
+                <div class="sidebar-search-container position-relative mb-3">
+                    <i class="fa-solid fa-magnifying-glass position-absolute search-icon-inside"></i>
+                    <input type="text" class="form-control" placeholder="Buscar grupos">
+                </div>
+
+                <nav class="mb-3">
+                    <a href="#" class="group-nav-item active">
+                        <div class="group-nav-icon-box">
+                            <i class="fa-solid fa-newspaper"></i>
+                        </div>
+                        <span>Tu feed</span>
+                    </a>
+                    <a href="#" class="group-nav-item">
+                        <div class="group-nav-icon-box">
+                            <i class="fa-solid fa-compass"></i>
+                        </div>
+                        <span>Descubrir</span>
+                    </a>
+                </nav>
+
+                <div class="mb-2">
+                    <button class="btn btn-create-group">
+                        <i class="fa-solid fa-plus me-2"></i> Crear nuevo grupo
+                    </button>
+                </div>
+
+                <div class="section-divider-title">Grupos que administras</div>
+                <div class="d-flex flex-column gap-1 mb-2">
+                    <a href="#" class="item-list-group">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=150" alt="Familia TI" class="item-group-avatar">
+                        <div class="overflow-hidden">
+                            <h4 class="item-group-name">Proyecto Integrador - Certus</h4>
+                            <p class="item-group-meta">Activo por última vez hace 10 min</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center mt-3 mb-2">
+                    <span class="section-divider-title m-0">Grupos a los que te uniste</span>
+                    <a href="#" class="text-primary text-decoration-none small fw-semibold">Ver todo</a>
+                </div>
+                
+                <div class="d-flex flex-column gap-1 overflow-y-auto flex-grow-1 pr-1">
+                    <a href="#" class="item-list-group">
+                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=150" alt="Grupo 1" class="item-group-avatar">
+                        <div class="overflow-hidden">
+                            <h4 class="item-group-name">Desarrolladores Full Stack CERTUS</h4>
+                            <p class="item-group-meta">Última actividad: hace 1 hora</p>
+                        </div>
+                    </a>
+                    <a href="#" class="item-list-group">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=150" alt="Grupo 2" class="item-group-avatar">
+                        <div class="overflow-hidden">
+                            <h4 class="item-group-name">Red de Empleo & Prácticas TI</h4>
+                            <p class="item-group-meta">Última actividad: hace 3 horas</p>
+                        </div>
+                    </a>
+                    <a href="#" class="item-list-group">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=150" alt="Grupo 3" class="item-group-avatar">
+                        <div class="overflow-hidden">
+                            <h4 class="item-group-name">Ciberseguridad & Redes - Alumnos</h4>
+                            <p class="item-group-meta">Última actividad: hace un día</p>
+                        </div>
+                    </a>
+                </div>
+
+            </aside>
+
+            <main class="col-12 col-md-8 col-xl-6 mx-xl-auto feed-container">
+                
+                <h3 class="feed-header-title">Actividad reciente</h3>
+
+                <article class="post-card">
+                    
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="d-flex align-items-center">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100" alt="Natali Chalco" class="post-header-avatar me-2">
+                            <div>
+                                <h4 class="post-author-name">
+                                    <a href="#">Natali Chalco Maldonado</a>
+                                </h4>
+                                <p class="post-meta-info">
+                                    Compartido en <a href="#" class="fw-bold text-dark text-decoration-none">Alquiler de habitaciones y minidepartamentos en Lima</a> · 55 min
+                                </p>
+                            </div>
+                        </div>
+                        <a href="#" class="post-btn-options text-decoration-none">
+                            <i class="fa-solid fa-ellipsis"></i>
+                        </a>
+                    </div>
+
+                    <div class="post-content-text mb-3">
+                        🏠 🏢 Se Alquila minidepartamento en La Molina en el primer piso ideal para una persona (Recomendado para alumnos o egresados de CERTUS).
+                        
+                        Para mayor información comunicarse al 942983256 o al enlace directo: <a href="https://wa.link/pppglz" target="_blank" class="post-tag-link">https://wa.link/pppglz</a>
+                        
+                        ✅ 1 Dormitorio amplio, 1 Baño propio, 1 ambiente uso cocina.
+                        ✅ Primer piso con ingreso independiente.
+                        ✅ Ubicación frente a parque, zona segura y tranquila cerca de avenidas principales.
+                        
+                        <a href="#" class="post-tag-link">#ViviendaEstudiantil</a> <a href="#" class="post-tag-link">#AlquilerLaMolina</a> <a href="#" class="post-tag-link">#ComunidadCertus</a>
+                    </div>
+
+                    <div class="post-media-gallery mb-3">
+                        <div class="row g-1">
+                            <div class="col-8">
+                                <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=600" alt="Habitación principal" class="post-media-main">
+                            </div>
+                            <div class="col-4 d-flex flex-column gap-1">
+                                <div class="flex-grow-1">
+                                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=400" alt="Baño propio" class="post-media-thumb">
+                                </div>
+                                <div class="flex-grow-1">
+                                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=400" alt="Cocina independiente" class="post-media-thumb">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="post-counters-row d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center gap-1">
+                            <span class="interaction-icon-circle" style="background-color: #1877f2;">
+                                <i class="fa-solid fa-thumbs-up"></i>
+                            </span>
+                            <span class="interaction-icon-circle" style="background-color: #f02849;">
+                                <i class="fa-solid fa-heart"></i>
+                            </span>
+                            <span>14 personas</span>
+                        </div>
+                        <div>
+                            <span class="me-2">6 comentarios</span>
+                            <span>2 veces compartido</span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex pt-1">
+                        <button class="post-action-btn">
+                            <i class="fa-regular fa-thumbs-up"></i> Me gusta
+                        </button>
+                        <button class="post-action-btn">
+                            <i class="fa-regular fa-comment"></i> Comentar
+                        </button>
+                        <button class="post-action-btn">
+                            <i class="fa-regular fa-share-from-square"></i> Compartir
+                        </button>
+                    </div>
+
+                </article>
+
+            </main>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="JS/script.js"></script>
+</body>
+</html>

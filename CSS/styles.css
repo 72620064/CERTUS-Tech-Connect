@@ -1278,3 +1278,408 @@ body {
         font-size: 1.15rem;
     }
 }
+
+
+/*NUEVO DISEÑO!!!!!!!!!!!!!!!!!!!!!!!!!!!
+NUEVO DISEÑO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+NUEVO DISEÑO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+/*NAVBAR GLOBAL*/
+.g-navbar {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    background-color: #ffffff !important;
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.02);
+}
+
+.g-nav-container {
+    padding-left: 4% !important;
+    padding-right: 4% !important;
+}
+
+.g-brand {
+    font-size: 1.25rem;
+    letter-spacing: -0.3px;
+}
+
+/* BUSCADOR OVALADO CENTRAL */
+.g-search-wrapper {
+    width: 100%;
+    max-width: 420px;
+}
+
+.g-search-input {
+    background-color: #f1f3f5 !important;
+    border: 1px solid transparent !important;
+    border-radius: 50px !important;
+    padding: 9px 40px 9px 20px !important;
+    font-size: 0.88rem;
+    color: #333333;
+    transition: all 0.2s ease;
+}
+
+.g-search-input:focus {
+    background-color: #ffffff !important;
+    border-color: #cbd5e1 !important;
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1) !important;
+}
+
+/* ESTILOS DE ICONOS Y ACCESOS */
+.g-nav-icons-list {
+    margin: 0;
+    padding: 0;
+}
+
+.g-icon-link {
+    color: #64748b !important;
+    font-size: 1.25rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.g-icon-link:hover {
+    color: #1a73e8 !important;
+    background-color: #f1f5f9;
+}
+
+/* Avatar del Perfil en el Navbar */
+.g-nav-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1.5px solid #e2e8f0;
+}
+
+.g-noti-dot {
+    margin-top: 6px;
+    margin-right: 6px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 991.98px) {
+    .g-search-wrapper {
+        max-width: 100%;
+        margin-bottom: 15px;
+    }
+    .g-nav-icons-list {
+        width: 100%;
+        justify-content: space-around;
+        padding-top: 10px;
+        border-top: 1px solid #f1f3f5;
+    }
+}
+
+/*GRUPOS*/
+/* Contenedor Principal con un alto mínimo para evitar desajustes */
+.main-wrapper {
+    min-height: calc(-10vh - -10px);
+}
+
+/* --- COLUMNA IZQUIERDA: PANEL DE CONTROL DE GRUPOS --- */
+.sidebar-groups {
+    background-color: #ffffff;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+    height: calc(100vh - 60px);
+    position: sticky;
+    top: 0px;
+    overflow-y: auto;
+    padding: 16px;
+}
+
+.sidebar-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0a2540; /* Azul muy oscuro institucional */
+}
+
+.btn-settings-sidebar {
+    color: #65676b;
+    background-color: #f0f2f5;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.btn-settings-sidebar:hover {
+    background-color: #e4e6eb;
+    color: #0a2540;
+}
+
+/* Buscador del Sidebar */
+.sidebar-search-container .form-control {
+    background-color: #f0f2f5;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 16px 10px 40px;
+    font-size: 0.95rem;
+}
+
+.sidebar-search-container .search-icon-inside {
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #8a8d91;
+}
+
+/* Enlaces / Casillas de Navegación */
+.group-nav-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    border-radius: 8px;
+    color: #050505;
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 4px;
+    transition: background-color 0.2s;
+}
+
+.group-nav-item:hover {
+    background-color: #f2f2f2;
+}
+
+.group-nav-item.active {
+    background-color: #e7f3ff;
+    color: #1877f2;
+}
+
+.group-nav-icon-box {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #e4e6eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    font-size: 1.1rem;
+}
+
+.group-nav-item.active .group-nav-icon-box {
+    background-color: #1877f2;
+    color: #ffffff;
+}
+
+/* Botón de Crear Grupo */
+.btn-create-group {
+    background-color: #e7f3ff;
+    color: #1877f2;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    padding: 10px;
+    width: 100%;
+    transition: background-color 0.2s;
+}
+
+.btn-create-group:hover {
+    background-color: #dbe7f2;
+}
+
+/* Subsecciones de listas de grupos */
+.section-divider-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #65676b;
+    margin-top: 20px;
+    margin-bottom: 12px;
+}
+
+.item-list-group {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #050505;
+    transition: background-color 0.2s;
+}
+
+.item-list-group:hover {
+    background-color: #f2f2f2;
+}
+
+.item-group-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 12px;
+}
+
+.item-group-name {
+    font-size: 0.93rem;
+    font-weight: 600;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.item-group-meta {
+    font-size: 0.82rem;
+    color: #65676b;
+    margin: 0;
+}
+
+/* --- COLUMNA CENTRAL: EL FEED DE PUBLICACIONES --- */
+.feed-container {
+    padding-top: 24px;
+    padding-bottom: 40px;
+}
+
+.feed-header-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #65676b;
+    margin-bottom: 16px;
+}
+
+/* Tarjeta de Publicación Estilo Red Social */
+.post-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    margin-bottom: 20px;
+}
+
+.post-header-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.post-author-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #050505;
+    margin: 0;
+}
+
+.post-author-name a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.post-author-name a:hover {
+    text-decoration: underline;
+}
+
+.post-meta-info {
+    font-size: 0.82rem;
+    color: #65676b;
+    margin: 0;
+}
+
+.post-btn-options {
+    color: #65676b;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.post-btn-options:hover {
+    background-color: #f2f2f2;
+}
+
+.post-content-text {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #050505;
+    white-space: pre-line;
+}
+
+.post-tag-link {
+    color: #1877f2;
+    text-decoration: none;
+}
+
+.post-tag-link:hover {
+    text-decoration: underline;
+}
+
+/* Galería de Imágenes Enlazadas Internamente */
+.post-media-gallery {
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #e4e6eb;
+}
+
+.post-media-main {
+    width: 100%;
+    height: auto;
+    max-height: 450px;
+    object-fit: cover;
+}
+
+.post-media-thumb {
+    width: 100%;
+    height: 100%;
+    min-height: 120px;
+    object-fit: cover;
+}
+
+/* Contadores de Interacción */
+.post-counters-row {
+    padding: 10px 0;
+    border-bottom: 1px solid #e4e6eb;
+    font-size: 0.88rem;
+    color: #65676b;
+}
+
+.interaction-icon-circle {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 0.65rem;
+}
+
+/* Botones de Acción (Me Gusta, Comentar, Compartir) */
+.post-action-btn {
+    background: none;
+    border: none;
+    border-radius: 4px;
+    color: #65676b;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 8px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.15s;
+}
+
+.post-action-btn:hover {
+    background-color: #f2f2f2;
+    color: #050505;
+}
+
+/* Ocultar barra de scroll en navegadores específicos si se desea */
+.sidebar-groups::-webkit-scrollbar {
+    width: 6px;
+}
+.sidebar-groups::-webkit-scrollbar-thumb {
+    background-color: #bcc0c4;
+    border-radius: 10px;
+}

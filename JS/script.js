@@ -1,51 +1,43 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Referencias a los componentes del DOM
-    const btnPublicar = document.getElementById('btnPublicar');
-    const btnSubir = document.getElementById('btnSubir');
-    const navBtnCrear = document.getElementById('navBtnCrear');
-    const txtExperiencia = document.getElementById('experienceText');
-    const txtTitulo = document.getElementById('postTitle');
-    const placeholderMultimedia = document.querySelector('.upload-placeholder-text');
+//BARRA DE NAVEGACIÓN
+//Inicializar todos los Tooltips de Bootstrap en la página
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+})
 
-    // 1. Lógica del botón Publicar
-    btnPublicar.addEventListener('click', () => {
-        const tituloValue = txtTitulo.value.trim();
-        const experienciaValue = txtExperiencia.value.trim();
-
-        if (!tituloValue || !experienciaValue) {
-            alert('Por favor, rellene tanto el título como su experiencia antes de publicar.');
-            return;
-        }
-
-        // Simulación exitosa
-        alert(`¡Publicación realizada con éxito!\n\nTítulo: ${tituloValue}`);
+async function cargarFragmento(idContenedor, rutaArchivo, callback) {
+    try {
+        const respuesta = await fetch(rutaArchivo);
+        if (!respuesta.ok) throw new Error(`Error al cargar ${rutaArchivo}`);
+        const html = await respuesta.text();
         
-        // Resetear formulario
-        txtTitulo.value = '';
-        txtExperiencia.value = '';
-        placeholderMultimedia.textContent = 'Arrastra o sube imagen';
-    });
+        const contenedor = document.getElementById(idContenedor);
+        if (contenedor) {
+            contenedor.innerHTML = html;
+            // Si hay un callback (como activar los tooltips), lo ejecutamos
+            if (callback) callback();
+        }
+    } catch (error) {
+        console.error(error);
+    }
+}
 
-    // 2. Simulación interactiva de carga de archivos multimedia
-    btnSubir.addEventListener('click', () => {
-        const fileInput = document.createElement('input');
-        fileInput.type = 'file';
-        fileInput.accept = 'image/*';
+// Ejecutar la carga automáticamente en cualquier página que use este script
+document.addEventListener("DOMContentLoaded", () => {
+    
+    // 1. Intentar cargar el Navbar si el contenedor existe en la página
+    if (document.getElementById("global-navbar")) {
+        cargarFragmento("global-navbar", "fragments/navbar.html", () => {
+            // Inicializar todos los Tooltips de Bootstrap nativos en el Navbar recién inyectado
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+        });
+    }
 
-        fileInput.onchange = (event) => {
-            const archivo = event.target.files[0];
-            if (archivo) {
-                placeholderMultimedia.textContent = `Archivo seleccionado: ${archivo.name}`;
-                placeholderMultimedia.style.color = '#1a73e8';
-            }
-        };
-
-        fileInput.click();
-    });
-
-    // 3. Foco inmediato al hacer clic en "Crear" desde el menú superior
-    navBtnCrear.addEventListener('click', (e) => {
-        e.preventDefault();
-        txtExperiencia.focus();
-    });
+    // 2. Intentar cargar el Footer si el contenedor existe en la página
+    if (document.getElementById("global-footer")) {
+        cargarFragmento("global-footer", "fragments/footer.html");
+    }
 });
