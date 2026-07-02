@@ -1,4 +1,4 @@
-# Certus-Tech-Connect 🌐🚀
+# Certus-Tech-Connect
 
 **Certus-Tech-Connect** es una solución tecnológica e institucional diseñada como una plataforma web y red social de networking académico-profesional para potenciar el talento de los estudiantes y egresados de CERTUS. 
 
