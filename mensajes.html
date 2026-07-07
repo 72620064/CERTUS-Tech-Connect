@@ -11,163 +11,608 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="CSS/styles.css">
+<style>
 
-    <style>
-        body{
-            background:#f3f5f7;
-        }
+:root{
 
-        .messages-container{
-            margin-top:35px;
-            margin-bottom:40px;
-        }
+    --primary:#2d74da;
 
-        .chat-panel{
-            background:#fff;
-            border-radius:18px;
-            overflow:hidden;
-            box-shadow:0 5px 18px rgba(0,0,0,.08);
-            height:78vh;
-        }
+    --body:#f3f5f7;
 
-        /* ---------- LISTA DE CHATS ---------- */
+    --panel:#ffffff;
 
-        .conversation-list{
-            border-right:1px solid #ececec;
-            height:100%;
-            overflow-y:auto;
-        }
+    --chat:#f8fafc;
 
-        .conversation-header{
-            padding:20px;
-            border-bottom:1px solid #ececec;
-        }
+    --text:#212529;
 
-        .search-chat{
-            border-radius:30px;
-        }
+    --active:#e9f2ff;
 
-        .conversation-item{
-            display:flex;
-            align-items:center;
-            gap:15px;
-            padding:15px 20px;
-            cursor:pointer;
-            transition:.2s;
-        }
+    --hover:#f4f7fb;
 
-        .conversation-item:hover{
-            background:#f4f7fb;
-        }
+}
 
-        .conversation-item.active{
-            background:#e9f2ff;
-        }
+body{
 
-        .conversation-item img{
-            width:55px;
-            height:55px;
-            border-radius:50%;
-            object-fit:cover;
-        }
+    background:var(--body);
 
-        .conversation-name{
-            font-weight:600;
-        }
+    transition:.35s;
 
-        .conversation-last{
-            color:#777;
-            font-size:.9rem;
-        }
+}
 
-        /* ---------- CHAT ---------- */
+.messages-container{
 
-        .chat-header{
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            padding:18px 25px;
-            border-bottom:1px solid #ececec;
-        }
+    margin-top:35px;
 
-        .chat-user{
-            display:flex;
-            align-items:center;
-            gap:15px;
-        }
+    margin-bottom:40px;
 
-        .chat-user img{
-            width:50px;
-            height:50px;
-            border-radius:50%;
-        }
+}
 
-        .chat-body{
-            height:calc(78vh - 150px);
-            overflow-y:auto;
-            padding:25px;
-            background:#f8fafc;
-        }
+.chat-panel{
 
-        .message{
-            display:flex;
-            margin-bottom:18px;
-        }
+    background:var(--panel);
 
-        .message.sent{
-            justify-content:flex-end;
-        }
+    transition:.35s;
 
-        .bubble{
-            max-width:70%;
-            padding:12px 18px;
-            border-radius:18px;
-        }
+    border-radius:18px;
 
-        .received .bubble{
-            background:#ffffff;
-        }
+    overflow:hidden;
 
-        .sent .bubble{
-            background:#2d74da;
-            color:white;
-        }
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
 
-        .chat-footer{
-            padding:18px;
-            border-top:1px solid #ececec;
-            background:#fff;
-        }
+    height:78vh;
 
-        .message-input{
-            border-radius:30px;
-            height:48px;
-        }
+}
 
-        .send-btn{
-            border-radius:30px;
-            width:55px;
-        }
+/* ---------- LISTA DE CHATS ---------- */
 
-        @media(max-width:992px){
+.conversation-list{
 
-            .conversation-list{
-                height:300px;
-                border-right:none;
-                border-bottom:1px solid #ececec;
-            }
+    border-right:1px solid #ececec;
 
-            .chat-panel{
-                height:auto;
-            }
+    background:var(--panel);
 
-            .chat-body{
-                height:400px;
-            }
+    transition:.35s;
 
-        }
-    </style>
+    height:100%;
 
+    overflow-y:auto;
+
+}
+
+.conversation-header{
+
+    padding:20px;
+
+    border-bottom:1px solid #ececec;
+
+    background:var(--panel);
+
+    color:var(--text);
+
+}
+
+.search-chat{
+
+    border-radius:30px;
+
+}
+
+.conversation-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:15px 20px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.conversation-item:hover{
+
+    background:var(--hover);
+
+}
+
+.conversation-item.active{
+
+    background:var(--active);
+
+}
+
+.conversation-name{
+
+    font-weight:600;
+
+    color:var(--text);
+
+}
+
+.conversation-last{
+
+    color:#777;
+
+    font-size:.9rem;
+
+}
+
+.conversation-item img{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+/* ---------- CHAT ---------- */
+
+.chat-header{
+
+    background:var(--panel);
+
+    color:var(--text);
+
+    transition:.35s;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 25px;
+
+    border-bottom:1px solid #ececec;
+
+}
+
+.chat-user{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.chat-user img{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+}
+
+.chat-body{
+
+    height:calc(78vh - 150px);
+
+    overflow-y:auto;
+
+    padding:25px;
+
+    background:var(--chat);
+
+    transition:.35s;
+
+}
+
+.message{
+
+    display:flex;
+
+    margin-bottom:18px;
+
+}
+
+.message.sent{
+
+    justify-content:flex-end;
+
+}
+
+.bubble{
+
+    max-width:70%;
+
+    padding:12px 18px;
+
+    border-radius:18px;
+
+}
+
+.received .bubble{
+
+    background:#ffffff;
+
+    color:#212529;
+
+}
+
+.sent .bubble{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+.chat-footer{
+
+    padding:18px;
+
+    border-top:1px solid #ececec;
+
+    background:var(--panel);
+
+    transition:.35s;
+
+}
+
+.message-input{
+
+    border-radius:30px;
+
+    height:48px;
+
+}
+
+.send-btn{
+
+    border-radius:30px;
+
+    width:55px;
+
+    background:var(--primary);
+
+    border:none;
+
+}
+
+.send-btn:hover{
+
+    filter:brightness(.9);
+
+}
+
+/* ---------- BOTONES DEL SELECTOR DE TEMAS ---------- */
+
+.theme-circle{
+
+    width:40px;
+
+    height:40px;
+
+    border-radius:50%;
+
+    border:none;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.theme-circle:hover{
+
+    transform:scale(1.18);
+
+    box-shadow:0 0 12px rgba(0,0,0,.25);
+
+}
+
+.offcanvas{
+
+    background:var(--panel);
+
+    color:var(--text);
+
+    transition:.35s;
+
+}
+
+@media(max-width:992px){
+
+    .conversation-list{
+
+        height:300px;
+
+        border-right:none;
+
+        border-bottom:1px solid #ececec;
+
+    }
+
+    .chat-panel{
+
+        height:auto;
+
+    }
+
+    .chat-body{
+
+        height:400px;
+
+    }
+
+}
+/*========== MENSAJES ==========*/
+
+.message{
+
+    animation: aparecer .25s ease;
+
+}
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(12px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.message-time{
+
+    font-size:11px;
+
+    margin-top:6px;
+
+    opacity:.7;
+
+    text-align:right;
+
+}
+
+.message-status{
+
+    font-size:11px;
+
+    margin-top:4px;
+
+    text-align:right;
+
+    color:#b8d8ff;
+
+}
+#emojiPanel{
+
+    display:none;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+    align-items:center;
+
+    justify-content:flex-start;
+
+}
+
+.emoji{
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+    padding:4px;
+
+}
+
+.emoji:hover{
+
+    transform:scale(1.3);
+
+}
+/*==============================
+    REACCIONES
+==============================*/
+
+.reaction-picker{
+
+    position:absolute;
+
+    top:-55px;
+
+    display:flex;
+
+    gap:6px;
+
+    background:#fff;
+
+    padding:8px 10px;
+
+    border-radius:30px;
+
+    box-shadow:0 5px 18px rgba(0,0,0,.18);
+
+    z-index:9999;
+
+    animation:aparecer .2s ease;
+
+}
+/* Mensajes enviados (derecha) */
+.message.sent .reaction-picker{
+
+    right:0;
+
+}
+
+/* Mensajes recibidos (izquierda) */
+.message.received .reaction-picker{
+
+    left:0;
+
+}
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+        transform:translateY(10px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+.reaction-picker span{
+
+    cursor:pointer;
+
+    font-size:22px;
+
+    transition:.2s;
+
+}
+
+.reaction-picker span:hover{
+
+    transform:scale(1.3);
+
+}
+
+.message{
+
+    position:relative;
+
+}
+
+.message-reaction{
+
+    position:absolute;
+
+    bottom:-14px;
+
+    right:8px;
+
+    background:white;
+
+    border-radius:50%;
+
+    padding:2px 6px;
+
+    font-size:18px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.2);
+
+}
+
+/* Si el mensaje es recibido, la reacción va a la izquierda */
+.message.received .message-reaction{
+
+    left:8px;
+
+    right:auto;
+
+}
+/*=============================
+      BOTÓN MICRÓFONO
+=============================*/
+
+#recordBtn{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    transition:.3s;
+
+}
+
+#recordBtn.recording{
+
+    background:#dc3545;
+
+    animation:pulse 1s infinite;
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.15);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+.page-theme{
+
+    width:70px;
+
+    height:70px;
+
+    border:none;
+
+    border-radius:18px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.25);
+
+}
+
+.page-theme:hover{
+
+    transform:scale(1.12) rotate(4deg);
+
+}
+
+.page-theme:hover{
+
+    transform:scale(1.08);
+
+}
+</style>
 </head>
 
 <body>
@@ -183,185 +628,331 @@
 
                 <!-- LISTA DE CONVERSACIONES -->
 
-                <div class="col-lg-4 conversation-list">
+<div class="col-lg-4 conversation-list">
 
-                    <div class="conversation-header">
+    <div class="conversation-header">
 
-                        <h3 class="fw-bold">Mensajes</h3>
+    <div class="d-flex justify-content-between align-items-center">
 
-                        <input
-                            class="form-control search-chat mt-3"
-                            placeholder="Buscar conversación">
+        <h3 class="fw-bold m-0">
 
-                    </div>
+            Mensajes
 
-                    <div class="conversation-item active">
+        </h3>
 
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg">
+        <button
+            class="btn btn-outline-primary rounded-circle"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#pageThemeCanvas"
+            title="Cambiar tema de la página">
 
-                        <div>
+            <i class="fa-solid fa-palette"></i>
 
-                            <div class="conversation-name">
-                                Carlos Mendoza
-                            </div>
+        </button>
 
-                            <div class="conversation-last">
-                                ¿Terminaste el proyecto?
-                            </div>
+    </div>
 
-                        </div>
+    <input
+        id="searchConversation"
+        class="form-control search-chat mt-3"
+        placeholder="Buscar conversación...">
 
-                    </div>
+</div>
 
-                    <div class="conversation-item">
+    <div class="conversation-item active"
+        data-name="Carlos Mendoza"
+        data-photo="https://randomuser.me/api/portraits/men/32.jpg"
+        data-status="🟢 En línea">
 
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg">
 
-                        <div>
+        <div>
 
-                            <div class="conversation-name">
-                                Ana Rodríguez
-                            </div>
+            <div class="conversation-name">
+                Carlos Mendoza
+            </div>
 
-                            <div class="conversation-last">
-                                Nos vemos mañana.
-                            </div>
+            <div class="conversation-last">
+                ¿Terminaste el proyecto?
+            </div>
 
-                        </div>
+        </div>
 
-                    </div>
+    </div>
 
-                    <div class="conversation-item">
+    <div class="conversation-item"
+        data-name="Ana Rodríguez"
+        data-photo="https://randomuser.me/api/portraits/women/44.jpg"
+        data-status="🟢 En línea">
 
-                        <img src="https://randomuser.me/api/portraits/men/11.jpg">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg">
 
-                        <div>
+        <div>
 
-                            <div class="conversation-name">
-                                Luis Pérez
-                            </div>
+            <div class="conversation-name">
+                Ana Rodríguez
+            </div>
 
-                            <div class="conversation-last">
-                                Gracias por el apoyo.
-                            </div>
+            <div class="conversation-last">
+                Nos vemos mañana.
+            </div>
 
-                        </div>
+        </div>
 
-                    </div>
+    </div>
 
-                    <div class="conversation-item">
+    <div class="conversation-item"
+        data-name="Luis Pérez"
+        data-photo="https://randomuser.me/api/portraits/men/11.jpg"
+        data-status="🟡 Ausente">
 
-                        <img src="https://randomuser.me/api/portraits/women/21.jpg">
+        <img src="https://randomuser.me/api/portraits/men/11.jpg">
 
-                        <div>
+        <div>
 
-                            <div class="conversation-name">
-                                Camila Torres
-                            </div>
+            <div class="conversation-name">
+                Luis Pérez
+            </div>
 
-                            <div class="conversation-last">
-                                ¿Estás libre hoy?
-                            </div>
+            <div class="conversation-last">
+                Gracias por el apoyo.
+            </div>
 
-                        </div>
+        </div>
 
-                    </div>
+    </div>
 
-                </div>
+    <div class="conversation-item"
+        data-name="Camila Torres"
+        data-photo="https://randomuser.me/api/portraits/women/21.jpg"
+        data-status="🔴 Desconectado">
 
+        <img src="https://randomuser.me/api/portraits/women/21.jpg">
+
+        <div>
+
+            <div class="conversation-name">
+                Camila Torres
+            </div>
+
+            <div class="conversation-last">
+                ¿Estás libre hoy?
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
                 <!-- CHAT -->
 
                 <div class="col-lg-8 d-flex flex-column">
 
                     <div class="chat-header">
 
-                        <div class="chat-user">
+    <div class="chat-user">
 
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg">
+        <img
+            id="chatPhoto"
+            src="https://randomuser.me/api/portraits/men/32.jpg"
+            class="rounded-circle"
+            width="50"
+            height="50"
+            style="cursor:pointer; object-fit:cover;"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#profileCanvas">
 
-                            <div>
+        <div>
 
-                                <strong>Carlos Mendoza</strong>
+            <strong id="chatName">
+                Carlos Mendoza
+            </strong>
 
-                                <div class="text-success small">
-                                    ● En línea
-                                </div>
+            <div
+                id="chatStatus"
+                class="text-success small">
 
-                            </div>
+                ● En línea
 
-                        </div>
+            </div>
 
-                        <div class="d-flex align-items-center">
+        </div>
 
-                            <i class="fa-solid fa-phone fs-5 me-3"></i>
+    </div>
 
-                            <i class="fa-solid fa-video fs-5 me-3"></i>
+    <div class="d-flex align-items-center">
 
-                            <i class="fa-solid fa-circle-info fs-5 me-3"></i>
+        <!-- Llamada -->
+        <button
+            id="callBtn"
+            class="btn btn-outline-secondary rounded-circle me-2"
+            data-bs-toggle="modal"
+            data-bs-target="#callModal"
+            title="Llamada">
 
-                            <button class="btn btn-light border rounded-circle"
-                                data-bs-toggle="offcanvas"
-                                data-bs-target="#themePanel">
+            <i class="fa-solid fa-phone"></i>
 
-                                <i class="fa-solid fa-palette"></i>
+        </button>
+        <!-- Videollamada -->
+        <button
+            id="videoCallBtn"
+            class="btn btn-outline-secondary rounded-circle me-2"
+            data-bs-toggle="tooltip"
+            data-bs-placement="bottom"
+            title="Videollamada">
 
-                            </button>
+            <i class="fa-solid fa-video"></i>
 
-                        </div>
+        </button>
 
-                    </div>
+        <!-- Información -->
+        <button
+            id="infoBtn"
+            class="btn btn-outline-secondary rounded-circle me-2"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#profileCanvas"
+            title="Información">
 
-                    <div class="chat-body">
+            <i class="fa-solid fa-circle-info"></i>
 
-                        <div class="message received">
-                            <div class="bubble">
-                                Hola Alexis 👋
-                            </div>
-                        </div>
+        </button>
 
-                        <div class="message received">
-                            <div class="bubble">
-                                ¿Terminaste el proyecto de CERTUS Connect?
-                            </div>
-                        </div>
+        <!-- Cambiar tema -->
+        <button
+            id="btnTheme"
+            class="btn btn-primary rounded-circle"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#themeCanvas"
+            title="Personalizar chat">
 
-                        <div class="message sent">
-                            <div class="bubble">
-                                Sí, ya casi lo termino 😄
-                            </div>
-                        </div>
+            <i class="fa-solid fa-palette"></i>
 
-                        <div class="message received">
-                            <div class="bubble">
-                                Excelente, luego me enseñas cómo hiciste la parte del chat.
-                            </div>
-                        </div>
+        </button>
 
-                        <div class="message sent">
-                            <div class="bubble">
-                                Claro, mañana en clases.
-                            </div>
-                        </div>
+    </div>
 
-                    </div>
+</div>
+                    <div class="chat-body" id="chatBody">
 
-                    <div class="chat-footer">
+    <div class="message received">
+
+        <div class="bubble">
+
+            Hola Alexis 👋
+
+            <div class="message-time">
+                10:15
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="message received">
+
+        <div class="bubble">
+
+            ¿Terminaste el proyecto de CERTUS Connect?
+
+            <div class="message-time">
+                10:16
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="message sent">
+
+        <div class="bubble">
+
+            Sí, ya casi 😄
+
+            <div class="message-time">
+                10:18
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+                    <div class="chat-footer position-relative">
 
                         <div class="input-group">
 
+                            <!-- Emoji -->
+                            <button
+                                id="emojiBtn"
+                                class="btn btn-outline-secondary"
+                                title="Emojis">
+
+                                😊
+
+                            </button>
+
+                            <!-- Adjuntar -->
+                            <button
+                                id="attachBtn"
+                                class="btn btn-outline-secondary"
+                                title="Adjuntar archivo">
+
+                                <i class="fa-solid fa-paperclip"></i>
+
+                            </button>
+                            <button
+                                id="recordBtn"
+                                class="btn btn-danger rounded-circle ms-2"
+                                title="Grabar audio">
+
+                                <i class="fa-solid fa-microphone"></i>
+
+                            </button>
+
+                            <!-- Input oculto -->
+                            <input
+                                type="file"
+                                id="fileInput"
+                                hidden
+                                accept="image/*,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt">
+
+                            <!-- Escribir mensaje -->
                             <input
                                 type="text"
                                 class="form-control message-input"
+                                id="messageInput"
                                 placeholder="Escribe un mensaje...">
 
-                            <button class="btn btn-primary send-btn">
+                            <!-- Enviar -->
+                            <button
+                                id="sendBtn"
+                                class="btn btn-primary send-btn">
 
                                 <i class="fa-solid fa-paper-plane"></i>
 
                             </button>
 
                         </div>
+                        <!-- Panel de emojis -->
 
+                        <div
+                            id="emojiPanel"
+                            class="shadow-lg rounded"
+                            style="
+                                display:none;
+                                position:absolute;
+                                bottom:75px;
+                                left:15px;
+                                width:320px;
+                                max-height:220px;
+                                overflow-y:auto;
+                                background:white;
+                                border:1px solid #ddd;
+                                padding:12px;
+                                z-index:9999;
+                            ">
+                        </div>
                     </div>
 
                 </div>
@@ -372,17 +963,196 @@
 
     </div>
 
-    <div id="global-footer"></div>
-    <!-- PANEL DE COLORES -->
+<div id="global-footer"></div>
+<!-- ================= PANEL INFORMACIÓN DEL CONTACTO ================= -->
+
+<!-- ===========================
+        PERFIL DEL CONTACTO
+=========================== -->
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="profileCanvas">
+
+    <div class="offcanvas-header">
+
+        <h4 class="fw-bold">
+
+            Información del contacto
+
+        </h4>
+
+        <button
+            class="btn-close"
+            data-bs-dismiss="offcanvas">
+        </button>
+
+    </div>
+
+    <div class="offcanvas-body text-center">
+
+        <img
+            id="profilePhoto"
+            src="https://randomuser.me/api/portraits/men/32.jpg"
+            class="rounded-circle shadow"
+            width="130"
+            height="130"
+            style="object-fit:cover;">
+
+        <h3
+            id="profileName"
+            class="mt-3">
+
+            Carlos Mendoza
+
+        </h3>
+
+        <span
+            id="profileStatus"
+            class="badge bg-success">
+
+            En línea
+
+        </span>
+
+        <hr>
+
+        <div class="text-start">
+
+            <p>
+
+                <i class="fa-solid fa-envelope me-2 text-primary"></i>
+
+                <span id="profileEmail">
+
+                    carlos@certus.edu.pe
+
+                </span>
+
+            </p>
+
+            <p>
+
+                <i class="fa-solid fa-phone me-2 text-success"></i>
+
+                <span id="profilePhone">
+
+                    999 111 222
+
+                </span>
+
+            </p>
+
+            <p>
+
+                <i class="fa-solid fa-graduation-cap me-2 text-danger"></i>
+
+                <span id="profileCareer">
+
+                    Ingeniería de Software
+
+                </span>
+
+            </p>
+
+            <p>
+
+                <i class="fa-solid fa-building me-2 text-warning"></i>
+
+                <span id="profileCompany">
+
+                    CERTUS
+
+                </span>
+
+            </p>
+
+            <p>
+
+                <i class="fa-solid fa-circle-info me-2 text-info"></i>
+
+                <span id="profileBio">
+
+                    Estudiante apasionado por la tecnología y el desarrollo web.
+
+                </span>
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+<!--====================================
+            MODAL LLAMADA
+=====================================-->
+
+<div class="modal fade" id="callModal" tabindex="-1">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content border-0 rounded-4">
+
+            <div class="modal-body text-center p-5">
+
+                <img
+                    id="callPhoto"
+                    src="https://randomuser.me/api/portraits/men/32.jpg"
+                    width="120"
+                    height="120"
+                    class="rounded-circle shadow mb-4"
+                    style="object-fit:cover;">
+
+                <h3 id="callName">
+
+                    Carlos Mendoza
+
+                </h3>
+
+                <p class="text-muted fs-5">
+
+                    📞 Llamando...
+
+                </p>
+
+                <div class="spinner-border text-success mb-4"></div>
+
+                <div class="d-flex justify-content-center gap-3">
+
+                    <button
+                        class="btn btn-danger rounded-circle p-3"
+                        data-bs-dismiss="modal">
+
+                        <i class="fa-solid fa-phone-slash"></i>
+
+                    </button>
+
+                    <button
+                        class="btn btn-success rounded-circle p-3">
+
+                        <i class="fa-solid fa-phone"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
 <div class="offcanvas offcanvas-end"
     tabindex="-1"
-    id="themePanel">
+    id="pageThemeCanvas">
 
     <div class="offcanvas-header">
 
         <h5>
-            Elegir tema
+
+            Temas de la página
+
         </h5>
 
         <button
@@ -394,54 +1164,119 @@
 
     <div class="offcanvas-body">
 
-        <div class="row g-3">
+        <div id="pageThemes"
+            class="d-flex flex-wrap gap-3">
 
-            <div class="col-3">
-                <button class="theme-btn bg-primary" data-color="#2d74da"></button>
+        </div>
+
+    </div>
+
+</div>
+<!-- ================= PANEL DE TEMAS ================= -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="themeCanvas">
+
+    <div class="offcanvas-header">
+
+        <h5 class="fw-bold">
+            🎨 Personalizar Chat
+        </h5>
+
+        <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+
+    </div>
+
+    <div class="offcanvas-body">
+
+        <h6 class="mb-3">Colores del chat</h6>
+
+        <div id="themeColors" class="d-flex flex-wrap gap-2 mb-4">
+
+        </div>
+
+        <hr>
+
+        <button id="darkMode" class="btn btn-dark w-100 mb-2">
+            🌙 Modo oscuro
+        </button>
+
+        <button id="lightMode" class="btn btn-outline-secondary w-100">
+            ☀️ Modo claro
+        </button>
+
+    </div>
+
+</div>
+<!-- ================= VENTANA DE VIDEOLLAMADA ================= -->
+
+<div class="modal fade" id="videoCallModal" tabindex="-1">
+
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">
+                    Videollamada con Carlos Mendoza
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal">
+                </button>
+
             </div>
 
-            <div class="col-3">
-                <button class="theme-btn bg-success" data-color="#198754"></button>
+            <div class="modal-body text-center">
+
+                <video
+                    id="localVideo"
+                    autoplay
+                    playsinline
+                    muted
+                    style="
+                        width:100%;
+                        max-height:500px;
+                        border-radius:15px;
+                        background:black;
+                    ">
+                </video>
+
             </div>
 
-            <div class="col-3">
-                <button class="theme-btn bg-danger" data-color="#dc3545"></button>
-            </div>
+            <div class="modal-footer justify-content-center">
 
-            <div class="col-3">
-                <button class="theme-btn bg-warning" data-color="#ffc107"></button>
-            </div>
+                <button
+                    id="toggleCamera"
+                    class="btn btn-primary">
 
-            <div class="col-3">
-                <button class="theme-btn bg-info" data-color="#0dcaf0"></button>
-            </div>
+                    <i class="fa-solid fa-camera"></i>
 
-            <div class="col-3">
-                <button class="theme-btn bg-dark" data-color="#212529"></button>
-            </div>
+                    Cámara
 
-            <div class="col-3">
-                <button class="theme-btn" style="background:#6f42c1" data-color="#6f42c1"></button>
-            </div>
+                </button>
 
-            <div class="col-3">
-                <button class="theme-btn" style="background:#fd7e14" data-color="#fd7e14"></button>
-            </div>
+                <button
+                    id="toggleMic"
+                    class="btn btn-warning">
 
-            <div class="col-3">
-                <button class="theme-btn" style="background:#20c997" data-color="#20c997"></button>
-            </div>
+                    <i class="fa-solid fa-microphone"></i>
 
-            <div class="col-3">
-                <button class="theme-btn" style="background:#e83e8c" data-color="#e83e8c"></button>
-            </div>
+                    Micrófono
 
-            <div class="col-3">
-                <button class="theme-btn" style="background:#795548" data-color="#795548"></button>
-            </div>
+                </button>
 
-            <div class="col-3">
-                <button class="theme-btn" style="background:#607d8b" data-color="#607d8b"></button>
+                <button
+                    id="endCall"
+                    class="btn btn-danger">
+
+                    <i class="fa-solid fa-phone-slash"></i>
+
+                    Colgar
+
+                </button>
+
             </div>
 
         </div>
@@ -449,48 +1284,1302 @@
     </div>
 
 </div>
+<!-- ==========================================
+        VISOR DE IMÁGENES
+========================================== -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<div class="modal fade" id="imageModal" tabindex="-1">
 
-    <script src="JS/script.js"></script>
-<div id="global-footer"></div>
+    <div class="modal-dialog modal-dialog-centered modal-xl">
 
+        <div class="modal-content bg-dark border-0">
+
+            <div class="modal-header border-0">
+
+                <button
+                    class="btn-close btn-close-white ms-auto"
+                    data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+            <div class="modal-body text-center">
+
+                <img
+                    id="previewImage"
+                    src=""
+                    style="
+                        max-width:100%;
+                        max-height:80vh;
+                        border-radius:12px;
+                    ">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- Bootstrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
+<!-- Script general -->
 <script src="JS/script.js"></script>
 
 <script>
 
-const botones=document.querySelectorAll(".theme-btn");
+/* =====================================================
+        SELECTOR DE TEMAS
+===================================================== */
 
-const burbujas=document.querySelectorAll(".sent .bubble");
+const colores=[
 
-const enviar=document.querySelector(".send-btn");
+"#2d74da","#198754","#dc3545","#ffc107","#0dcaf0",
+"#6f42c1","#fd7e14","#20c997","#e83e8c","#795548",
+"#607d8b","#673ab7","#3f51b5","#009688","#4caf50",
+"#8bc34a","#ff5722","#9c27b0","#2196f3","#ff9800",
+"#ff1744","#00c853","#651fff","#00b8d4","#d500f9",
+"#c51162","#304ffe","#00e676","#ff6d00","#aa00ff",
+"#1de9b6","#76ff03","#ffd600","#00bfa5","#6200ea",
+"#f44336","#03a9f4","#0091ea","#64dd17","#ff4081"
 
-botones.forEach(btn=>{
+];
 
-    btn.onclick=()=>{
+const themeColors=document.getElementById("themeColors");
 
-        const color=btn.dataset.color;
+if(themeColors){
 
-        document.documentElement.style.setProperty("--theme",color);
+    colores.forEach(color=>{
 
-        burbujas.forEach(b=>{
+        const btn=document.createElement("button");
 
-            b.style.background=color;
+        btn.className="theme-circle";
+
+        btn.style.background=color;
+
+        btn.title=color;
+
+        btn.onclick=()=>{
+
+            cambiarColor(color);
+
+        };
+
+        themeColors.appendChild(btn);
+
+    });
+
+}
+
+function cambiarColor(color){
+
+    document.documentElement.style.setProperty("--primary",color);
+
+    localStorage.setItem("chatColor",color);
+
+}
+
+const dark=document.getElementById("darkMode");
+
+if(dark){
+
+dark.onclick=function(){
+
+document.documentElement.style.setProperty("--body","#111827");
+document.documentElement.style.setProperty("--panel","#1f2937");
+document.documentElement.style.setProperty("--chat","#111827");
+document.documentElement.style.setProperty("--text","#ffffff");
+document.documentElement.style.setProperty("--active","#374151");
+document.documentElement.style.setProperty("--hover","#2d3748");
+
+localStorage.setItem("themeMode","dark");
+
+}
+
+}
+
+const light=document.getElementById("lightMode");
+
+if(light){
+
+light.onclick=function(){
+
+document.documentElement.style.setProperty("--body","#f3f5f7");
+document.documentElement.style.setProperty("--panel","#ffffff");
+document.documentElement.style.setProperty("--chat","#f8fafc");
+document.documentElement.style.setProperty("--text","#212529");
+document.documentElement.style.setProperty("--active","#e9f2ff");
+document.documentElement.style.setProperty("--hover","#f4f7fb");
+
+localStorage.setItem("themeMode","light");
+
+}
+
+}
+
+const colorGuardado=localStorage.getItem("chatColor");
+
+if(colorGuardado){
+
+    cambiarColor(colorGuardado);
+
+}
+
+const modoGuardado=localStorage.getItem("themeMode");
+
+if(modoGuardado==="dark"){
+
+    dark.click();
+
+}else{
+
+    light.click();
+
+}
+
+/* =====================================================
+                CHAT
+===================================================== */
+
+const chatBody=document.getElementById("chatBody");
+
+const input=document.getElementById("messageInput");
+
+const sendBtn=document.getElementById("sendBtn");
+
+function horaActual(){
+
+    const fecha=new Date();
+
+    let horas=fecha.getHours();
+
+    let minutos=fecha.getMinutes();
+
+    if(minutos<10){
+
+        minutos="0"+minutos;
+
+    }
+
+    return horas+":"+minutos;
+
+}
+
+function enviarMensaje(){
+
+    const texto = input.value.trim();
+
+    if(texto === "") return;
+
+    const hora = horaActual();
+
+    // Crear mensaje visual
+    const mensaje = document.createElement("div");
+
+    mensaje.className = "message sent";
+
+    mensaje.innerHTML = `
+
+        <div class="bubble">
+
+            ${texto}
+
+            <div class="message-time">
+
+                ${hora}
+
+            </div>
+
+            <div class="message-status">
+
+                ✔✔ Visto
+
+            </div>
+
+        </div>
+
+    `;
+
+    // Mostrar en pantalla
+    chatBody.appendChild(mensaje);
+    
+
+    // ===========================================
+    // GUARDAR EL MENSAJE EN LA CONVERSACIÓN ACTUAL
+    // ===========================================
+
+    const nombreActual = document.getElementById("chatName").textContent;
+
+    if(conversaciones[nombreActual]){
+
+        conversaciones[nombreActual].push({
+
+            tipo: "sent",
+
+            texto: texto,
+
+            hora: hora
 
         });
 
-        enviar.style.background=color;
+    }
+
+    // ===========================================
+
+    input.value = "";
+
+    input.focus();
+
+    chatBody.scrollTop = chatBody.scrollHeight;
+
+}
+
+// Botón enviar
+sendBtn.addEventListener("click", enviarMensaje);
+
+// Enter para enviar
+input.addEventListener("keydown", function(e){
+
+    if(e.key === "Enter"){
+
+        e.preventDefault();
+
+        enviarMensaje();
 
     }
 
 });
 
+// Posicionar siempre abajo
+chatBody.scrollTop = chatBody.scrollHeight;
+/* =====================================================
+                VIDEOLLAMADA
+===================================================== */
+
+let localStream = null;
+
+const videoCallBtn = document.getElementById("videoCallBtn");
+const videoModal = document.getElementById("videoCallModal");
+const localVideo = document.getElementById("localVideo");
+
+const toggleCamera = document.getElementById("toggleCamera");
+const toggleMic = document.getElementById("toggleMic");
+const endCall = document.getElementById("endCall");
+
+const modalVideo = new bootstrap.Modal(videoCallModal);
+
+// Abrir videollamada
+videoCallBtn.addEventListener("click", async () => {
+
+    try {
+
+        localStream = await navigator.mediaDevices.getUserMedia({
+            video: true,
+            audio: true
+        });
+
+        localVideo.srcObject = localStream;
+
+        modalVideo.show();
+
+    } catch (error) {
+
+        alert("No se pudo acceder a la cámara o al micrófono.");
+
+        console.error(error);
+
+    }
+
+});
+
+// Encender / apagar cámara
+
+toggleCamera.addEventListener("click", () => {
+
+    if (!localStream) return;
+
+    const track = localStream.getVideoTracks()[0];
+
+    track.enabled = !track.enabled;
+
+    toggleCamera.innerHTML = track.enabled
+        ? '<i class="fa-solid fa-camera"></i> Cámara'
+        : '<i class="fa-solid fa-camera-slash"></i> Cámara apagada';
+
+});
+
+// Encender / apagar micrófono
+
+toggleMic.addEventListener("click", () => {
+
+    if (!localStream) return;
+
+    const track = localStream.getAudioTracks()[0];
+
+    track.enabled = !track.enabled;
+
+    toggleMic.innerHTML = track.enabled
+        ? '<i class="fa-solid fa-microphone"></i> Micrófono'
+        : '<i class="fa-solid fa-microphone-slash"></i> Micrófono apagado';
+
+});
+
+// Colgar llamada
+
+function cerrarLlamada() {
+
+    if (localStream) {
+
+        localStream.getTracks().forEach(track => track.stop());
+
+        localVideo.srcObject = null;
+
+        localStream = null;
+
+    }
+
+    modalVideo.hide();
+
+}
+
+endCall.addEventListener("click", cerrarLlamada);
+
+// Si cierran la ventana con la X
+
+videoCallModal.addEventListener("hidden.bs.modal", cerrarLlamada);
+
+/* ==========================================
+        SELECTOR DE EMOJIS
+========================================== */
+
+const emojiBtn=document.getElementById("emojiBtn");
+
+const emojiPanel=document.getElementById("emojiPanel");
+
+const listaEmojis=[
+
+"😀","😁","😂","🤣","😊","😍","😘","😎","🤩","🥳",
+"😭","😡","😱","🤯","🥶","😴","🤖","👻","❤️","💙",
+"💚","💛","🧡","💜","🖤","👍","👎","👏","🙌","🤝",
+"🔥","⭐","✨","🎉","🎂","🍕","☕","💻","📚","🎮",
+"🚗","🏆","⚽","🎵","📱","🐱","🐶","🌎","🌞","🌙","🍓"
+,"🍔","🍟","🍦","🍩","🍪","🥗","🥩","🥪","🥤","🍷"
+
+];
+
+listaEmojis.forEach(e=>{
+
+    const span=document.createElement("span");
+
+    span.className="emoji";
+
+    span.innerHTML=e;
+
+    span.onclick=function(){
+
+    input.value += e;
+
+    input.focus();
+
+};
+
+    emojiPanel.appendChild(span);
+
+});
+
+emojiBtn.onclick=function(){
+
+    if(emojiPanel.style.display==="none"){
+
+        emojiPanel.style.display="flex";
+
+    }else{
+
+        emojiPanel.style.display="none";
+
+    }
+
+};
+/* ==========================================
+            ADJUNTAR ARCHIVOS
+========================================== */
+
+const attachBtn = document.getElementById("attachBtn");
+const fileInput = document.getElementById("fileInput");
+
+attachBtn.onclick = function () {
+
+    fileInput.click();
+
+};
+
+fileInput.addEventListener("change", function () {
+
+    if (!this.files.length) return;
+
+    const archivo = this.files[0];
+
+    const hora = horaActual();
+
+    // Si es imagen
+    if (archivo.type.startsWith("image/")) {
+
+        const lector = new FileReader();
+
+        lector.onload = function (e) {
+
+            chatBody.insertAdjacentHTML("beforeend", `
+
+                <div class="message sent">
+
+                    <div class="bubble">
+
+                        <img
+                        src="${e.target.result}"
+                        class="chat-image"
+                        style="
+                            max-width:220px;
+                            border-radius:12px;
+                            cursor:pointer;
+                        ">
+
+                        <div class="message-time">
+
+                            ${hora}
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            `);
+
+            chatBody.scrollTop = chatBody.scrollHeight;
+
+        };
+
+        lector.readAsDataURL(archivo);
+
+    }
+
+    else{
+
+    const url = URL.createObjectURL(archivo);
+
+    let icono="fa-file";
+
+    if(archivo.type=="application/pdf"){
+
+        icono="fa-file-pdf";
+
+    }
+
+    else if(
+        archivo.type.includes("word") ||
+        archivo.name.endsWith(".doc") ||
+        archivo.name.endsWith(".docx")
+    ){
+
+        icono="fa-file-word";
+
+    }
+
+    else if(
+        archivo.type.includes("excel") ||
+        archivo.name.endsWith(".xls") ||
+        archivo.name.endsWith(".xlsx")
+    ){
+
+        icono="fa-file-excel";
+
+    }
+
+    else if(
+        archivo.name.endsWith(".ppt") ||
+        archivo.name.endsWith(".pptx")
+    ){
+
+        icono="fa-file-powerpoint";
+
+    }
+
+    else if(archivo.type.startsWith("video/")){
+
+        chatBody.insertAdjacentHTML("beforeend",`
+
+        <div class="message sent">
+
+            <div class="bubble">
+
+                <video controls
+                    style="
+                        width:260px;
+                        border-radius:10px;
+                    ">
+
+                    <source src="${url}">
+
+                </video>
+
+                <div class="message-time">
+
+                    ${hora}
+
+                </div>
+
+            </div>
+
+        </div>
+
+        `);
+
+        chatBody.scrollTop=chatBody.scrollHeight;
+
+        return;
+
+    }
+
+    else if(archivo.type.startsWith("audio/")){
+
+        chatBody.insertAdjacentHTML("beforeend",`
+
+        <div class="message sent">
+
+            <div class="bubble">
+
+                <audio controls>
+
+                    <source src="${url}">
+
+                </audio>
+
+                <div class="message-time">
+
+                    ${hora}
+
+                </div>
+
+            </div>
+
+        </div>
+
+        `);
+
+        chatBody.scrollTop=chatBody.scrollHeight;
+
+        return;
+
+    }
+
+    chatBody.insertAdjacentHTML("beforeend",`
+
+    <div class="message sent">
+
+        <div class="bubble">
+
+            <a href="${url}"
+               target="_blank"
+               style="
+                    text-decoration:none;
+                    color:inherit;
+               ">
+
+                <i class="fa-solid ${icono} fs-3 me-2"></i>
+
+                ${archivo.name}
+
+            </a>
+
+            <div class="message-time">
+
+                ${hora}
+
+            </div>
+
+        </div>
+
+    </div>
+
+    `);
+
+    chatBody.scrollTop=chatBody.scrollHeight;
+
+}
+
+    this.value = "";
+
+});
+/* ==========================================
+        VISOR DE IMÁGENES
+========================================== */
+
+const previewImage = document.getElementById("previewImage");
+
+const imageModal = new bootstrap.Modal(
+    document.getElementById("imageModal")
+);
+
+document.addEventListener("click",function(e){
+
+    if(e.target.classList.contains("chat-image")){
+
+        previewImage.src=e.target.src;
+
+        imageModal.show();
+
+    }
+
+});
+/* ==========================================
+      CAMBIAR DE CONVERSACIÓN
+========================================== */
+
+const conversaciones = {
+
+    "Carlos Mendoza":[
+
+        {
+            tipo:"received",
+            texto:"Hola Alexis 👋",
+            hora:"10:15"
+        },
+
+        {
+            tipo:"received",
+            texto:"¿Terminaste el proyecto de CERTUS Connect?",
+            hora:"10:16"
+        },
+
+        {
+            tipo:"sent",
+            texto:"Sí, ya casi 😄",
+            hora:"10:18"
+        }
+
+    ],
+
+    "Ana Rodríguez":[
+
+        {
+            tipo:"received",
+            texto:"Hola 😊",
+            hora:"09:20"
+        },
+
+        {
+            tipo:"received",
+            texto:"Nos vemos mañana.",
+            hora:"09:22"
+        }
+
+    ],
+
+    "Luis Pérez":[
+
+        {
+            tipo:"received",
+            texto:"Gracias por ayudarme.",
+            hora:"08:40"
+        },
+
+        {
+            tipo:"sent",
+            texto:"Con gusto 👍",
+            hora:"08:45"
+        }
+
+    ],
+
+    "Camila Torres":[
+
+        {
+            tipo:"received",
+            texto:"¿Vienes a clases hoy?",
+            hora:"11:05"
+        }
+
+    ]
+
+};
+
+const items = document.querySelectorAll(".conversation-item");
+/* ==========================================
+        DATOS DE LOS CONTACTOS
+========================================== */
+
+const perfiles = {
+
+    "Carlos Mendoza":{
+
+        foto:"https://randomuser.me/api/portraits/men/32.jpg",
+
+        estado:"En línea",
+
+        badge:"bg-success",
+
+        email:"carlos@certus.edu.pe",
+
+        telefono:"999 111 222",
+
+        carrera:"Ingeniería de Software",
+
+        empresa:"CERTUS",
+
+        bio:"Estudiante apasionado por la tecnología y el desarrollo web."
+
+    },
+
+    "Ana Rodríguez":{
+
+        foto:"https://randomuser.me/api/portraits/women/44.jpg",
+
+        estado:"En línea",
+
+        badge:"bg-success",
+
+        email:"ana@certus.edu.pe",
+
+        telefono:"987 654 321",
+
+        carrera:"Administración",
+
+        empresa:"CERTUS",
+
+        bio:"Le encanta trabajar en equipo y liderar proyectos."
+
+    },
+
+    "Luis Pérez":{
+
+        foto:"https://randomuser.me/api/portraits/men/11.jpg",
+
+        estado:"Ausente",
+
+        badge:"bg-warning",
+
+        email:"luis@certus.edu.pe",
+
+        telefono:"965 874 123",
+
+        carrera:"Redes y Comunicaciones",
+
+        empresa:"CERTUS",
+
+        bio:"Especialista en infraestructura y redes."
+
+    },
+
+    "Camila Torres":{
+
+        foto:"https://randomuser.me/api/portraits/women/21.jpg",
+
+        estado:"Desconectada",
+
+        badge:"bg-danger",
+
+        email:"camila@certus.edu.pe",
+
+        telefono:"944 888 777",
+
+        carrera:"Diseño UX/UI",
+
+        empresa:"CERTUS",
+
+        bio:"Apasionada por el diseño de interfaces y experiencia de usuario."
+
+    }
+
+};
+items.forEach(item=>{
+
+    item.onclick=function(){
+
+        items.forEach(c=>c.classList.remove("active"));
+
+        this.classList.add("active");
+
+        const nombre=this.dataset.name;
+        const foto=this.dataset.photo;
+        const estado=this.dataset.status;
+        const perfil = perfiles[nombre];
+
+        // Cambiar encabezado
+        document.getElementById("chatName").textContent=nombre;
+        document.getElementById("chatPhoto").src=foto;
+        document.getElementById("chatStatus").textContent=estado;
+        // ==========================
+// ACTUALIZAR PERFIL
+// ==========================
+
+document.getElementById("profilePhoto").src = perfil.foto;
+
+document.getElementById("profileName").textContent = nombre;
+
+document.getElementById("profileEmail").textContent = perfil.email;
+
+document.getElementById("profilePhone").textContent = perfil.telefono;
+
+document.getElementById("profileCareer").textContent = perfil.carrera;
+
+document.getElementById("profileCompany").textContent = perfil.empresa;
+
+document.getElementById("profileBio").textContent = perfil.bio;
+
+const estadoPerfil = document.getElementById("profileStatus");
+
+estadoPerfil.textContent = perfil.estado;
+
+estadoPerfil.className = "badge " + perfil.badge;
+        // Cambiar chat
+        chatBody.innerHTML="";
+
+        conversaciones[nombre].forEach(msg=>{
+
+    if(msg.audio){
+
+        chatBody.insertAdjacentHTML("beforeend",`
+
+            <div class="message ${msg.tipo}">
+
+                <div class="bubble">
+
+                    <div class="d-flex align-items-center mb-2">
+
+                        <i class="fa-solid fa-microphone text-danger me-2"></i>
+
+                        <strong>Mensaje de voz</strong>
+
+                    </div>
+
+                    <audio controls style="width:100%;">
+
+                        <source src="${msg.audio}" type="audio/webm">
+
+                    </audio>
+
+                    <div class="message-time">
+
+                        ${msg.hora}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        `);
+
+    }
+
+    else{
+
+        chatBody.insertAdjacentHTML("beforeend",`
+
+            <div class="message ${msg.tipo}">
+
+                <div class="bubble">
+
+                    ${msg.texto}
+
+                    <div class="message-time">
+
+                        ${msg.hora}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        `);
+
+    }
+
+});
+
+        chatBody.scrollTop=chatBody.scrollHeight;
+
+    };
+
+});
+/*==========================================
+      BUSCADOR DE CONVERSACIONES
+==========================================*/
+
+const buscador = document.getElementById("searchConversation");
+
+const conversacionesLista = document.querySelectorAll(".conversation-item");
+
+buscador.addEventListener("keyup", function(){
+
+    const texto = this.value.toLowerCase();
+
+    conversacionesLista.forEach(function(chat){
+
+        const nombre = chat.dataset.name.toLowerCase();
+
+        if(nombre.includes(texto)){
+
+            chat.style.display = "flex";
+
+        }else{
+
+            chat.style.display = "none";
+
+        }
+
+    });
+
+});
+/*==========================================
+        REACCIONES MENSAJES
+==========================================*/
+
+const emojis=["❤️","👍","😂","😮","😢","😡"];
+
+document.addEventListener("click",function(e){
+
+    const mensaje=e.target.closest(".bubble");
+
+    if(!mensaje) return;
+
+    // eliminar selector anterior
+    document.querySelectorAll(".reaction-picker").forEach(x=>x.remove());
+
+    const picker=document.createElement("div");
+
+    picker.className="reaction-picker";
+
+    emojis.forEach(emoji=>{
+
+        const span=document.createElement("span");
+
+        span.textContent=emoji;
+
+        span.onclick=function(ev){
+
+            ev.stopPropagation();
+
+            let reaccion=mensaje.querySelector(".message-reaction");
+
+            if(!reaccion){
+
+                reaccion=document.createElement("div");
+
+                reaccion.className="message-reaction";
+
+                mensaje.appendChild(reaccion);
+
+            }
+
+            reaccion.textContent=emoji;
+
+            picker.remove();
+
+        };
+
+        picker.appendChild(span);
+
+    });
+
+    mensaje.appendChild(picker);
+
+});
+/*==================================
+        GRABAR AUDIO
+==================================*/
+
+let mediaRecorder;
+let audioChunks = [];
+let grabando = false;
+
+const recordBtn = document.getElementById("recordBtn");
+
+recordBtn.addEventListener("click", async function(){
+
+    if(!grabando){
+
+        try{
+
+            const stream = await navigator.mediaDevices.getUserMedia({
+                audio:true
+            });
+
+            mediaRecorder = new MediaRecorder(stream);
+
+            audioChunks = [];
+
+            mediaRecorder.start();
+
+            grabando = true;
+
+            recordBtn.classList.add("recording");
+
+            recordBtn.innerHTML =
+            '<i class="fa-solid fa-stop"></i>';
+
+            mediaRecorder.ondataavailable = function(e){
+
+                audioChunks.push(e.data);
+
+            };
+
+            mediaRecorder.onstop = function(){
+
+                const audioBlob = new Blob(audioChunks,{
+                    type:"audio/webm"
+                });
+
+                const audioURL = URL.createObjectURL(audioBlob);
+
+                agregarAudio(audioURL);
+
+                stream.getTracks().forEach(track=>track.stop());
+
+            };
+
+        }
+        catch(error){
+
+            alert("No se pudo acceder al micrófono.");
+
+            console.error(error);
+
+        }
+
+    }
+    else{
+
+        mediaRecorder.stop();
+
+        grabando = false;
+
+        recordBtn.classList.remove("recording");
+
+        recordBtn.innerHTML =
+        '<i class="fa-solid fa-microphone"></i>';
+
+    }
+
+});
+/*==================================
+        AGREGAR AUDIO AL CHAT
+==================================*/
+
+function agregarAudio(audioURL){
+
+    const hora = horaActual();
+
+    const mensaje = document.createElement("div");
+
+    mensaje.className = "message sent";
+
+    mensaje.innerHTML = `
+
+        <div class="bubble">
+
+            <div class="d-flex align-items-center mb-2">
+
+                <i class="fa-solid fa-microphone text-danger me-2"></i>
+
+                <strong>Mensaje de voz</strong>
+
+            </div>
+
+            <audio controls style="width:100%;">
+
+                <source src="${audioURL}" type="audio/webm">
+
+                Tu navegador no soporta audio.
+
+            </audio>
+
+            <div class="message-time">
+
+                ${hora}
+
+            </div>
+
+            <div class="message-status">
+
+                ✔✔ Visto
+
+            </div>
+
+        </div>
+
+    `;
+
+    chatBody.appendChild(mensaje);
+
+    chatBody.scrollTop = chatBody.scrollHeight;
+
+    // Guardar en la conversación actual
+
+    const nombreActual = document.getElementById("chatName").textContent;
+
+    if(conversaciones[nombreActual]){
+
+        conversaciones[nombreActual].push({
+
+            tipo:"sent",
+
+            audio:audioURL,
+
+            hora:hora
+
+        });
+
+    }
+
+}
+/*==================================
+        LLAMADA
+==================================*/
+
+const callBtn=document.getElementById("callBtn");
+
+callBtn.addEventListener("click",function(){
+
+    document.getElementById("callPhoto").src =
+    document.getElementById("chatPhoto").src;
+
+    document.getElementById("callName").innerHTML =
+    document.getElementById("chatName").innerHTML;
+
+});
+/*=========================================
+        TEMAS GLOBALES
+=========================================*/
+
+const temasPagina=[
+
+{nombre:"🔵 Azul",body:"#dbeafe",panel:"#ffffff",chat:"#eff6ff",primary:"#2563eb",text:"#111827"},
+{nombre:"🟢 Verde",body:"#dcfce7",panel:"#ffffff",chat:"#ecfdf5",primary:"#16a34a",text:"#111827"},
+{nombre:"🔴 Rojo",body:"#fee2e2",panel:"#ffffff",chat:"#fef2f2",primary:"#dc2626",text:"#111827"},
+{nombre:"🟣 Morado",body:"#ede9fe",panel:"#ffffff",chat:"#f5f3ff",primary:"#7c3aed",text:"#111827"},
+{nombre:"🟠 Naranja",body:"#ffedd5",panel:"#ffffff",chat:"#fff7ed",primary:"#ea580c",text:"#111827"},
+{nombre:"🩷 Rosa",body:"#fce7f3",panel:"#ffffff",chat:"#fdf2f8",primary:"#db2777",text:"#111827"},
+{nombre:"🟦 Celeste",body:"#cffafe",panel:"#ffffff",chat:"#ecfeff",primary:"#0891b2",text:"#111827"},
+{nombre:"🟨 Amarillo",body:"#fef9c3",panel:"#ffffff",chat:"#fefce8",primary:"#ca8a04",text:"#111827"},
+{nombre:"🟤 Café",body:"#efebe9",panel:"#ffffff",chat:"#faf7f5",primary:"#6d4c41",text:"#111827"},
+{nombre:"🩶 Gris",body:"#f3f4f6",panel:"#ffffff",chat:"#f9fafb",primary:"#6b7280",text:"#111827"},
+
+{nombre:"💙 Messenger",body:"#dbeafe",panel:"#ffffff",chat:"#eff6ff",primary:"#0084ff",text:"#111827"},
+{nombre:"💚 WhatsApp",body:"#dcfce7",panel:"#ffffff",chat:"#ecfdf5",primary:"#25D366",text:"#111827"},
+{nombre:"💜 Discord",body:"#2b2d31",panel:"#313338",chat:"#383a40",primary:"#5865F2",text:"#ffffff"},
+{nombre:"📸 Instagram",body:"#fff1f7",panel:"#ffffff",chat:"#fff8fb",primary:"#e1306c",text:"#111827"},
+{nombre:"❤️ YouTube",body:"#fff1f2",panel:"#ffffff",chat:"#fef2f2",primary:"#ff0000",text:"#111827"},
+{nombre:"🐦 Twitter",body:"#e0f2fe",panel:"#ffffff",chat:"#f0f9ff",primary:"#1DA1F2",text:"#111827"},
+{nombre:"🎵 Spotify",body:"#dcfce7",panel:"#ffffff",chat:"#ecfdf5",primary:"#1DB954",text:"#111827"},
+{nombre:"💼 LinkedIn",body:"#dbeafe",panel:"#ffffff",chat:"#eff6ff",primary:"#0A66C2",text:"#111827"},
+
+{nombre:"🌊 Océano",body:"#dbeafe",panel:"#ffffff",chat:"#e0f2fe",primary:"#0284c7",text:"#111827"},
+{nombre:"🌲 Bosque",body:"#dcfce7",panel:"#ffffff",chat:"#f0fdf4",primary:"#166534",text:"#111827"},
+{nombre:"🌅 Atardecer",body:"#ffedd5",panel:"#ffffff",chat:"#fff7ed",primary:"#f97316",text:"#111827"},
+{nombre:"🌸 Sakura",body:"#fce7f3",panel:"#ffffff",chat:"#fdf2f8",primary:"#ec4899",text:"#111827"},
+{nombre:"🍇 Uva",body:"#ede9fe",panel:"#ffffff",chat:"#f5f3ff",primary:"#8b5cf6",text:"#111827"},
+{nombre:"🍋 Limón",body:"#fef9c3",panel:"#ffffff",chat:"#fefce8",primary:"#eab308",text:"#111827"},
+{nombre:"🔥 Lava",body:"#fee2e2",panel:"#ffffff",chat:"#fff5f5",primary:"#ef4444",text:"#111827"},
+{nombre:"❄️ Hielo",body:"#e0f2fe",panel:"#ffffff",chat:"#f0f9ff",primary:"#38bdf8",text:"#111827"},
+
+{nombre:"🌌 Neón",body:"#111827",panel:"#1f2937",chat:"#111827",primary:"#00E5FF",text:"#ffffff"},
+{nombre:"🎮 Gamer",body:"#000000",panel:"#121212",chat:"#1a1a1a",primary:"#39FF14",text:"#ffffff"},
+{nombre:"🌑 Negro",body:"#000000",panel:"#202020",chat:"#2a2a2a",primary:"#ffffff",text:"#ffffff"},
+{nombre:"🌙 Oscuro",body:"#111827",panel:"#1f2937",chat:"#0f172a",primary:"#60a5fa",text:"#ffffff"}
+
+];
+const pageThemes=document.getElementById("pageThemes");
+
+temasPagina.forEach(t=>{
+
+    const b=document.createElement("button");
+
+    b.className="page-theme";
+
+    b.style.background=
+`linear-gradient(135deg,${t.primary},${t.body})`;
+
+    b.title=t.nombre;
+
+    b.onclick=function(){
+
+        document.documentElement.style.setProperty("--body",t.body);
+            document.documentElement.style.setProperty("--panel",t.panel);
+            document.documentElement.style.setProperty("--chat",t.chat);
+            document.documentElement.style.setProperty("--primary",t.primary);
+            document.documentElement.style.setProperty("--text",t.text);
+
+            document.body.style.background=t.body;
+
+            document.querySelectorAll(".chat-panel").forEach(e=>{
+                e.style.background=t.panel;
+            });
+
+            document.querySelectorAll(".chat-header").forEach(e=>{
+                e.style.background=t.panel;
+                e.style.color=t.text;
+            });
+
+            document.querySelectorAll(".chat-footer").forEach(e=>{
+                e.style.background=t.panel;
+            });
+
+            document.querySelectorAll(".conversation-list").forEach(e=>{
+                e.style.background=t.panel;
+            });
+
+            document.querySelectorAll(".conversation-header").forEach(e=>{
+                e.style.background=t.panel;
+            });
+
+            document.querySelectorAll(".sent .bubble").forEach(e=>{
+                e.style.background=t.primary;
+            });
+
+            document.querySelectorAll(".send-btn").forEach(e=>{
+                e.style.background=t.primary;
+                e.style.borderColor=t.primary;
+            });
+
+        if(t.text){
+
+            document.documentElement.style.setProperty("--text",t.text);
+
+        }else{
+
+            document.documentElement.style.setProperty("--text","#212529");
+
+        }
+
+        localStorage.setItem("temaPagina",JSON.stringify(t));
+
+    };
+
+    pageThemes.appendChild(b);
+
+});
+
+const temaGuardado=localStorage.getItem("temaPagina");
+
+if(temaGuardado){
+
+    const t=JSON.parse(temaGuardado);
+
+    document.documentElement.style.setProperty("--body",t.body);
+
+    document.documentElement.style.setProperty("--panel",t.panel);
+
+    document.documentElement.style.setProperty("--chat",t.chat);
+
+    document.documentElement.style.setProperty("--primary",t.primary);
+
+    document.documentElement.style.setProperty("--text",t.text||"#212529");
+
+}
 </script>
 
 </body>
-</html>
-</body>
-
 </html>
