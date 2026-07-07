@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CERTUS Connect</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+
+    <div id="global-navbar"></div>
+
+    <div class="container jobs-wrapper">
+        <div class="row g-4">
+            
+            <aside class="col-12 col-lg-4 col-xl-3">
+                
+                <div class="emp-sidebar-card">
+                    <div class="emp-profile-banner"></div>
+                    <div class="emp-avatar-wrapper mb-2">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=100" alt="Alumno Certus" class="emp-profile-avatar">
+                    </div>
+                    <div class="px-3 pb-3">
+                        <h4 class="emp-profile-name m-0">Alumno CERTUS</h4>
+                        <p class="emp-profile-meta m-0">Estudiante de Computación e Informática</p>
+                        <p class="emp-profile-meta text-muted m-0"><i class="fa-solid fa-location-dot me-1"></i> Lima, Perú</p>
+                    </div>
+
+                    <a href="#" class="emp-sidebar-link">
+                        <i class="fa-solid fa-list-check text-secondary"></i> Preferencias de empleo
+                    </a>
+                    <a href="#" class="emp-sidebar-link">
+                        <i class="fa-regular fa-bookmark text-secondary"></i> Mis empleos guardados
+                    </a>
+                </div>
+
+                <div class="emp-sidebar-card">
+                    <a href="#" class="emp-btn-blue-outline">
+                        <i class="fa-regular fa-pen-to-square"></i> Anunciar un empleo gratis
+                    </a>
+                </div>
+
+            </aside>
+
+            <main class="col-12 col-lg-8 col-xl-9">
+                
+                <div class="emp-accordion-trigger mb-4" data-bs-toggle="collapse" data-bs-target="#collapseGuide">
+                    <span>Dinos qué estás buscando para recibir empleos acordes a tu carrera TI</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="collapse mb-4" id="collapseGuide">
+                    <div class="card card-body border-0 shadow-sm rounded-3 bg-white">
+                        Puedes configurar tus preferencias de lenguajes de programación (Java, Python, Javascript), infraestructura o bases de datos desde tu perfil para afinar los resultados.
+                    </div>
+                </div>
+
+                <div class="emp-main-card">
+                    <h3 class="emp-section-title">Más empleos para ti</h3>
+                    <p class="emp-section-subtitle">En función de tu perfil de CERTUS Connect, tus preferencias y áreas de TI.</p>
+
+                    <div class="job-item-row">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=100" alt="Skechers" class="job-company-logo">
+                        <div>
+                            <h4 class="job-title"><a href="#">Auxiliar de Soporte Técnico y Redes</a></h4>
+                            <p class="job-company-name">Skechers Perú · Área metropolitana de Lima</p>
+                            <p class="job-location-tag">Presencial · Hace 2 horas</p>
+                            <span class="job-badge-promo">Promocionado</span>
+                            <div class="job-easy-apply">
+                                <i class="fa-solid fa-bolt"></i> Postulación rápida institucional
+                            </div>
+                        </div>
+                        <button class="btn-dismiss-job" title="Descartar"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+
+                    <div class="job-item-row">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=100" alt="Concentrix" class="job-company-logo">
+                        <div>
+                            <h4 class="job-title"><a href="#">Practicante Pre-Profesional Backend (Node.js)</a></h4>
+                            <p class="job-company-name">Concentrix · San Isidro (Híbrido)</p>
+                            <p class="job-location-tag">Tiempo completo · Hace 1 día</p>
+                            <div class="job-easy-apply">
+                                <i class="fa-solid fa-bolt"></i> Postulación rápida institucional
+                            </div>
+                        </div>
+                        <button class="btn-dismiss-job" title="Descartar"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+
+                    <div class="job-item-row">
+                        <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=100" alt="Puzzle Partners" class="job-company-logo">
+                        <div>
+                            <h4 class="job-title"><a href="#">Diseñador(a) Junior de Producto UI/UX</a></h4>
+                            <p class="job-company-name">Puzzle Partners · Miraflores (Presencial)</p>
+                            <p class="job-location-tag">Tiempo completo · Hace 3 días</p>
+                            <span class="job-badge-promo">Alumnos de últimos ciclos</span>
+                        </div>
+                        <button class="btn-dismiss-job" title="Descartar"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+
+                    <div class="job-item-row">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=100" alt="Impala Terminals" class="job-company-logo">
+                        <div>
+                            <h4 class="job-title"><a href="#">Analista Junior de Base de Datos y Reportes</a></h4>
+                            <p class="job-company-name">Impala Terminals · Callao (Presencial)</p>
+                            <p class="job-location-tag">Tiempo completo · Hace 5 días</p>
+                        </div>
+                        <button class="btn-dismiss-job" title="Descartar"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+
+                </div>
+
+            </main>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="JS/script.js"></script>
+</body>
+</html>
