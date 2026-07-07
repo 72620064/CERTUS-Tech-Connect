@@ -1683,3 +1683,30 @@ NUEVO DISEÑO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
     background-color: #bcc0c4;
     border-radius: 10px;
 }
+.theme-btn{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    border:none;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.theme-btn:hover{
+
+    transform:scale(1.15);
+
+}
+
+:root{
+
+    --theme:#2d74da;
+
+}
