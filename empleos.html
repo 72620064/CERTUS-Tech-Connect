@@ -28,18 +28,18 @@
                         <p class="emp-profile-meta text-muted m-0"><i class="fa-solid fa-location-dot me-1"></i> Lima, Perú</p>
                     </div>
 
-                    <a href="#" class="emp-sidebar-link">
+                    <button class="emp-sidebar-link w-100 border-0 bg-transparent text-start" data-bs-toggle="modal" data-bs-target="#preferenciasModal">
                         <i class="fa-solid fa-list-check text-secondary"></i> Preferencias de empleo
-                    </a>
-                    <a href="#" class="emp-sidebar-link">
+                    </button>
+                    <button class="emp-sidebar-link w-100 border-0 bg-transparent text-start" data-bs-toggle="modal" data-bs-target="#empleosGuardadosModal">
                         <i class="fa-regular fa-bookmark text-secondary"></i> Mis empleos guardados
-                    </a>
+                    </button>
                 </div>
 
                 <div class="emp-sidebar-card">
-                    <a href="#" class="emp-btn-blue-outline">
+                    <button class="emp-btn-blue-outline w-100 bg-transparent text-center border-0" data-bs-toggle="modal" data-bs-target="#anunciarEmpleoModal">
                         <i class="fa-regular fa-pen-to-square"></i> Anunciar un empleo gratis
-                    </a>
+                    </button>
                 </div>
 
             </aside>
@@ -59,7 +59,7 @@
                 <div class="emp-main-card">
                     <h3 class="emp-section-title">Más empleos para ti</h3>
                     <p class="emp-section-subtitle">En función de tu perfil de CERTUS Connect, tus preferencias y áreas de TI.</p>
-
+                    
                     <div class="job-item-row">
                         <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=100" alt="Skechers" class="job-company-logo">
                         <div>
@@ -107,14 +107,174 @@
                         </div>
                         <button class="btn-dismiss-job" title="Descartar"><i class="fa-solid fa-xmark"></i></button>
                     </div>
-
+                    <div id="contenedorEmpleosPrincipal">
+                    </div>  
                 </div>
 
             </main>
 
         </div>
     </div>
+    <div class="modal fade" id="preferenciasModal" tabindex="-1" aria-labelledby="preferenciasModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg" style="border-radius: 16px;">
+                
+                <div class="modal-header border-bottom-0 pt-4 px-4">
+                    <h5 class="modal-title fw-bold" id="preferenciasModalLabel" style="color: #0c2340; font-size: 1.4rem;">Mis Preferencias de Empleo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                
+                <div class="modal-body px-4 pb-4">
+                    <div class="row g-2 mb-4">
+                        <div class="col-md-9">
+                            <textarea id="preferenciaInput" class="form-control" rows="2" placeholder='Escribe una preferencia... (ej. "Trabajo en remoto full-time", "Rol de Desarrollador Junior Java")' style="border-radius: 8px; resize: none; font-size: 0.95rem; border: 1px solid #cbd5e1;"></textarea>
+                        </div>
+                        <div class="col-md-3 d-grid">
+                            <button id="btnAnadirPreferencia" class="btn fw-bold" style="background-color: #0c2340; color: #ffffff; border-radius: 8px; font-size: 0.95rem;">Añadir a mi lista</button>
+                        </div>
+                    </div>
 
+                    <div style="max-height: 250px; overflow-y: auto; padding-right: 5px;">
+                        <ol id="listaPreferencias" class="list-unstyled d-flex flex-column gap-3 m-0 p-0">
+                            <li class="d-flex align-items-start gap-2" style="font-size: 1rem; color: #334155;">
+                                <span class="text-success fw-bold">✓</span>
+                                <span>1. Trabajo en remoto full-time (TI/Ciberseguridad)</span>
+                            </li>
+                            <li class="d-flex align-items-start gap-2" style="font-size: 1rem; color: #334155;">
+                                <span class="text-success fw-bold">✓</span>
+                                <span>2. Rol de Desarrollador Junior Java/Python en Lima</span>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="empleosGuardadosModal" tabindex="-1" aria-labelledby="empleosGuardadosModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg" style="border-radius: 16px;">
+                
+                <div class="modal-header border-bottom-0 pt-4 px-4">
+                    <h5 class="modal-title fw-bold" id="empleosGuardadosModalLabel" style="color: #0c2340; font-size: 1.4rem;">
+                        <i class="fa-solid fa-bookmark text-primary me-2"></i> Mis Empleos Guardados (3)
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                
+                <div class="modal-body px-4 pb-4">
+                    <div id="listaGuardados" class="d-flex flex-column gap-3" style="max-height: 400px; overflow-y: auto;">
+                        
+                        <div class="p-3 border rounded-3 d-flex justify-content-between align-items-center bg-white position-relative">
+                            <div class="d-flex align-items-center">
+                                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=80" alt="Logo Empresa" class="rounded-2 me-3 border" style="width: 50px; height: 50px; object-fit: cover;">
+                                <div>
+                                    <h6 class="fw-bold mb-1" style="color: #1a73e8;">Desarrollador Front-end Junior (React)</h6>
+                                    <p class="mb-0 small fw-semibold" style="color: #0c2340;">Interbank · Lima, Perú</p>
+                                    <p class="mb-0 text-muted" style="font-size: 0.8rem;">Guardado hace 2 días · Híbrido</p>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-primary fw-bold px-3" style="border-radius: 20px;">Postular</button>
+                                <button class="btn btn-sm btn-outline-danger btn-eliminar-favorito" style="border-radius: 50%; width: 32px; height: 32px; padding: 0;" title="Quitar de favoritos">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="p-3 border rounded-3 d-flex justify-content-between align-items-center bg-white position-relative">
+                            <div class="d-flex align-items-center">
+                                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=80" alt="Logo Empresa" class="rounded-2 me-3 border" style="width: 50px; height: 50px; object-fit: cover;">
+                                <div>
+                                    <h6 class="fw-bold mb-1" style="color: #1a73e8;">Analista de Ciberseguridad Trainee</h6>
+                                    <p class="mb-0 small fw-semibold" style="color: #0c2340;">Alicorp · Callao</p>
+                                    <p class="mb-0 text-muted" style="font-size: 0.8rem;">Guardado hace 4 días · Presencial</p>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-primary fw-bold px-3" style="border-radius: 20px;">Postular</button>
+                                <button class="btn btn-sm btn-outline-danger btn-eliminar-favorito" style="border-radius: 50%; width: 32px; height: 32px; padding: 0;" title="Quitar de favoritos">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="p-3 border rounded-3 d-flex justify-content-between align-items-center bg-white position-relative">
+                            <div class="d-flex align-items-center">
+                                <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=80" alt="Logo Empresa" class="rounded-2 me-3 border" style="width: 50px; height: 50px; object-fit: cover;">
+                                <div>
+                                    <h6 class="fw-bold mb-1" style="color: #1a73e8;">Practicante de Base de Datos (SQL Server)</h6>
+                                    <p class="mb-0 small fw-semibold" style="color: #0c2340;">Everis / NTT Data · San Isidro</p>
+                                    <p class="mb-0 text-muted" style="font-size: 0.8rem;">Guardado hace 1 semana · Remoto</p>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-primary fw-bold px-3" style="border-radius: 20px;">Postular</button>
+                                <button class="btn btn-sm btn-outline-danger btn-eliminar-favorito" style="border-radius: 50%; width: 32px; height: 32px; padding: 0;" title="Quitar de favoritos">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="anunciarEmpleoModal" tabindex="-1" aria-labelledby="anunciarEmpleoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg" style="border-radius: 16px;">
+                
+                <div class="modal-header border-bottom-0 pt-4 px-4">
+                    <h5 class="modal-title fw-bold" id="anunciarEmpleoModalLabel" style="color: #0c2340; font-size: 1.3rem;">
+                        <i class="fa-solid fa-briefcase text-primary me-2"></i> Publicar una Oferta Laboral
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                
+                <div class="modal-body px-4 pb-4">
+                    <form id="formAnunciarEmpleo" class="d-flex flex-column gap-3">
+                        <div>
+                            <label class="form-label small fw-bold text-secondary">Puesto de trabajo</label>
+                            <input type="text" id="postPuesto" class="form-control" placeholder="Ej. Desarrollador Web Frontend" required style="border-radius: 8px;">
+                        </div>
+                        <div>
+                            <label class="form-label small fw-bold text-secondary">Empresa</label>
+                            <input type="text" id="postEmpresa" class="form-control" placeholder="Ej. Banco de Crédito del Perú" required style="border-radius: 8px;">
+                        </div>
+                        <div>
+                            <label class="form-label small fw-bold text-secondary">Distrito (Lima)</label>
+                            <input type="text" id="postDistrito" class="form-control" placeholder="Ej. Miraflores" required style="border-radius: 8px;">
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <label class="form-label small fw-bold text-secondary">Modalidad</label>
+                                <select id="postModalidad" class="form-select" style="border-radius: 8px;">
+                                    <option value="Presencial">Presencial</option>
+                                    <option value="Remoto">Remoto</option>
+                                    <option value="Híbrido">Híbrido</option>
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label small fw-bold text-secondary">Jornada</label>
+                                <select id="postJornada" class="form-select" style="border-radius: 8px;">
+                                    <option value="Tiempo completo">Tiempo completo</option>
+                                    <option value="Tiempo parcial">Tiempo parcial</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-end gap-2 mt-2">
+                            <button type="button" class="btn btn-light fw-bold px-4" data-bs-dismiss="modal" style="border-radius: 8px;">Cancelar</button>
+                            <button type="submit" class="btn fw-bold px-4" style="background-color: #0c2340; color: white; border-radius: 8px;">Guardar y Publicar</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="JS/script.js"></script>
 </body>

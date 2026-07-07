@@ -1682,4 +1682,259 @@ NUEVO DISEÑO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 .sidebar-groups::-webkit-scrollbar-thumb {
     background-color: #bcc0c4;
     border-radius: 10px;
+<<<<<<< Updated upstream
+=======
+}
+.theme-btn{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    border:none;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.theme-btn:hover{
+
+    transform:scale(1.15);
+
+}
+
+:root{
+
+    --theme:#2d74da;
+
+}
+
+/*EMPLEOS*/
+.jobs-wrapper {
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+
+/* --- COLUMNA IZQUIERDA: TARJETAS DE PERFIL Y FILTROS --- */
+.emp-sidebar-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.01);
+    margin-bottom: 20px;
+}
+
+/* Fondo decorativo del mini banner del perfil */
+.emp-profile-banner {
+    height: 60px;
+    background-color: #bce0fd; /* Celeste del banner intermedio */
+}
+
+.emp-avatar-wrapper {
+    margin-top: -30px;
+    padding: 0 16px;
+}
+
+.emp-profile-avatar {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ffffff;
+    background-color: #ffffff;
+}
+
+.emp-profile-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0c2340;
+}
+
+.emp-profile-meta {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+/* Enlaces / Botones de Preferencias laterales */
+.emp-sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    color: #475569;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.92rem;
+    border-top: 1px solid #f1f5f9;
+    transition: all 0.2s ease;
+}
+
+.emp-sidebar-link:hover {
+    background-color: #f8fafc;
+    color: #1a73e8; /* Azul primario del botón burbuja */
+}
+
+/* Botón publicar empleo con diseño de píldora/burbuja azul del proyecto */
+.emp-btn-blue-outline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 16px;
+    padding: 10px;
+    background-color: transparent;
+    color: #1a73e8;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 2px solid #1a73e8;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.emp-btn-blue-outline:hover {
+    background-color: #1a73e8;
+    color: #ffffff;
+}
+
+/* --- COLUMNA CENTRAL / DERECHA: LISTADO DE EMPLEOS --- */
+.emp-main-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.01);
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+/* Acordeón superior de búsqueda guiada */
+.emp-accordion-trigger {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 16px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #475569;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.emp-accordion-trigger:hover {
+    background-color: #f8fafc;
+}
+
+.emp-section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0c2340;
+    margin-bottom: 4px;
+}
+
+.emp-section-subtitle {
+    font-size: 0.88rem;
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+/* Bloque individual de cada oferta de empleo */
+.job-item-row {
+    display: flex;
+    padding: 16px 0;
+    border-bottom: 1px solid #f1f5f9;
+    position: relative;
+    transition: background-color 0.15s;
+}
+
+.job-item-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.job-company-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 1px solid #e2e8f0;
+    margin-right: 16px;
+}
+
+.job-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+
+.job-title a {
+    color: #1a73e8; /* Enlaces en el azul característico */
+    text-decoration: none;
+}
+
+.job-title a:hover {
+    text-decoration: underline;
+}
+
+.job-company-name {
+    font-size: 0.9rem;
+    color: #0c2340;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.job-location-tag {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 4px;
+}
+
+.job-badge-promo {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #155cb8;
+    background-color: #e7f3ff;
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+}
+
+.job-easy-apply {
+    font-size: 0.82rem;
+    color: #1a73e8;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Botón de descartar o cerrar oferta (X) */
+.btn-dismiss-job {
+    color: #94a3b8;
+    background: none;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    top: 14px;
+    transition: all 0.2s;
+}
+
+.btn-dismiss-job:hover {
+    background-color: #f1f5f9;
+    color: #64748b;
+>>>>>>> Stashed changes
 }
