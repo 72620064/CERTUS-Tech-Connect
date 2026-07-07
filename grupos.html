@@ -7,7 +7,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="CSS/styles.css">
-    
 </head>
 <body>
 
@@ -20,9 +19,40 @@
                 
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <h2 class="sidebar-title m-0">Grupos</h2>
-                    <a href="#" class="btn-settings-sidebar" title="Configuración de grupos">
-                        <i class="fa-solid fa-gear"></i>
-                    </a>
+                    
+                    <div class="dropdown">
+                        <a href="#" 
+                            class="btn-settings-sidebar text-dark text-decoration-none"
+                            id="dropdownMenuConfig"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                            title="Opciones de grupos">
+                            <i class="fa-solid fa-ellipsis fs-5"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-2" aria-labelledby="dropdownMenuConfig">
+                            <li>
+                                <a class="dropdown-item py-2" href="#" data-bs-toggle="modal" data-bs-target="#configGruposModal" onclick="irASubvista('privacidad', 'Editar Privacidad')">
+                                    <i class="fa-solid fa-shield-halved text-primary me-2"></i> Editar privacidad de grupos
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item py-2" href="#" data-bs-toggle="modal" data-bs-target="#configGruposModal" onclick="irASubvista('solicitudes', 'Administrar Solicitudes')">
+                                    <i class="fa-solid fa-user-plus text-success me-2"></i> Administrar solicitudes
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item py-2" href="#" data-bs-toggle="modal" data-bs-target="#configGruposModal" onclick="irASubvista('miembros', 'Administrar Miembros')">
+                                    <i class="fa-solid fa-users-gear text-warning me-2"></i> Administrar miembros
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item py-2 text-danger" href="#" data-bs-toggle="modal" data-bs-target="#configGruposModal" onclick="irASubvista('salir', 'Salir de Grupos')">
+                                    <i class="fa-solid fa-door-open me-2"></i> Salir de grupos
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="sidebar-search-container position-relative mb-3">
@@ -31,13 +61,13 @@
                 </div>
 
                 <nav class="mb-3">
-                    <a href="#" class="group-nav-item active">
+                    <a href="#" id="btn-feed" class="group-nav-item active" onclick="cambiarVista('feed', this)">
                         <div class="group-nav-icon-box">
                             <i class="fa-solid fa-newspaper"></i>
                         </div>
                         <span>Tu feed</span>
                     </a>
-                    <a href="#" class="group-nav-item">
+                    <a href="#" id="btn-descubrir" class="group-nav-item" onclick="cambiarVista('descubrir', this)">
                         <div class="group-nav-icon-box">
                             <i class="fa-solid fa-compass"></i>
                         </div>
@@ -46,14 +76,17 @@
                 </nav>
 
                 <div class="mb-2">
-                    <button class="btn btn-create-group">
+                    <button 
+                        class="btn btn-create-group"
+                        data-bs-toggle="modal"
+                        data-bs-target="#crearGrupoModal">
                         <i class="fa-solid fa-plus me-2"></i> Crear nuevo grupo
                     </button>
                 </div>
 
                 <div class="section-divider-title">Grupos que administras</div>
-                <div class="d-flex flex-column gap-1 mb-2">
-                    <a href="#" class="item-list-group">
+                <div id="lista-grupos-administrados" class="d-flex flex-column gap-1 mb-2">
+                    <a href="#" class="item-list-group" onclick="cargarGrupoEspecifico('Proyecto Integrador - Certus', 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=600', 'Grupo de coordinación para el avance del proyecto final integrador de la carrera.')">
                         <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=150" alt="Familia TI" class="item-group-avatar">
                         <div class="overflow-hidden">
                             <h4 class="item-group-name">Proyecto Integrador - Certus</h4>
@@ -64,25 +97,25 @@
 
                 <div class="d-flex justify-content-between align-items-center mt-3 mb-2">
                     <span class="section-divider-title m-0">Grupos a los que te uniste</span>
-                    <a href="#" class="text-primary text-decoration-none small fw-semibold">Ver todo</a>
+                    <a href="#" class="text-primary text-decoration-none small fw-semibold" onclick="document.getElementById('btn-descubrir').click();">Ver todo</a>
                 </div>
                 
                 <div class="d-flex flex-column gap-1 overflow-y-auto flex-grow-1 pr-1">
-                    <a href="#" class="item-list-group">
+                    <a href="#" class="item-list-group" onclick="cargarGrupoEspecifico('Desarrolladores Full Stack CERTUS', 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=600', 'Comunidad de aprendizaje e intercambio de código frontend, backend y bases de datos.')">
                         <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=150" alt="Grupo 1" class="item-group-avatar">
                         <div class="overflow-hidden">
                             <h4 class="item-group-name">Desarrolladores Full Stack CERTUS</h4>
                             <p class="item-group-meta">Última actividad: hace 1 hora</p>
                         </div>
                     </a>
-                    <a href="#" class="item-list-group">
+                    <a href="#" class="item-list-group" onclick="cargarGrupoEspecifico('Red de Empleo & Prácticas TI', 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=600', 'Bolsa de trabajo interna, convocatorias de prácticas y consejos de empleabilidad.')">
                         <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=150" alt="Grupo 2" class="item-group-avatar">
                         <div class="overflow-hidden">
                             <h4 class="item-group-name">Red de Empleo & Prácticas TI</h4>
                             <p class="item-group-meta">Última actividad: hace 3 horas</p>
                         </div>
                     </a>
-                    <a href="#" class="item-list-group">
+                    <a href="#" class="item-list-group" onclick="cargarGrupoEspecifico('Ciberseguridad & Redes - Alumnos', 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=600', 'Espacio para discusiones sobre redes de comunicación, Linux, seguridad de la información y pentesting.')">
                         <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=150" alt="Grupo 3" class="item-group-avatar">
                         <div class="overflow-hidden">
                             <h4 class="item-group-name">Ciberseguridad & Redes - Alumnos</h4>
@@ -95,91 +128,259 @@
 
             <main class="col-12 col-md-8 col-xl-6 mx-xl-auto feed-container">
                 
-                <h3 class="feed-header-title">Actividad reciente</h3>
+                <div id="vista-feed">
+                    <h3 class="feed-header-title">Actividad reciente</h3>
 
-                <article class="post-card">
-                    
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <div class="d-flex align-items-center">
-                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100" alt="Natali Chalco" class="post-header-avatar me-2">
-                            <div>
-                                <h4 class="post-author-name">
-                                    <a href="#">Natali Chalco Maldonado</a>
-                                </h4>
-                                <p class="post-meta-info">
-                                    Compartido en <a href="#" class="fw-bold text-dark text-decoration-none">Alquiler de habitaciones y minidepartamentos en Lima</a> · 55 min
-                                </p>
-                            </div>
-                        </div>
-                        <a href="#" class="post-btn-options text-decoration-none">
-                            <i class="fa-solid fa-ellipsis"></i>
-                        </a>
-                    </div>
-
-                    <div class="post-content-text mb-3">
-                        🏠 🏢 Se Alquila minidepartamento en La Molina en el primer piso ideal para una persona (Recomendado para alumnos o egresados de CERTUS).
-                        
-                        Para mayor información comunicarse al 942983256 o al enlace directo: <a href="https://wa.link/pppglz" target="_blank" class="post-tag-link">https://wa.link/pppglz</a>
-                        
-                        ✅ 1 Dormitorio amplio, 1 Baño propio, 1 ambiente uso cocina.
-                        ✅ Primer piso con ingreso independiente.
-                        ✅ Ubicación frente a parque, zona segura y tranquila cerca de avenidas principales.
-                        
-                        <a href="#" class="post-tag-link">#ViviendaEstudiantil</a> <a href="#" class="post-tag-link">#AlquilerLaMolina</a> <a href="#" class="post-tag-link">#ComunidadCertus</a>
-                    </div>
-
-                    <div class="post-media-gallery mb-3">
-                        <div class="row g-1">
-                            <div class="col-8">
-                                <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=600" alt="Habitación principal" class="post-media-main">
-                            </div>
-                            <div class="col-4 d-flex flex-column gap-1">
-                                <div class="flex-grow-1">
-                                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=400" alt="Baño propio" class="post-media-thumb">
-                                </div>
-                                <div class="flex-grow-1">
-                                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=400" alt="Cocina independiente" class="post-media-thumb">
+                    <article class="post-card mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="d-flex align-items-center">
+                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100" alt="Natali Chalco" class="post-header-avatar me-2">
+                                <div>
+                                    <h4 class="post-author-name">
+                                        <a href="#">Natali Chalco Maldonado</a>
+                                    </h4>
+                                    <p class="post-meta-info">
+                                        Compartido en <a href="#" class="fw-bold text-dark text-decoration-none">Alquiler de habitaciones...</a> · 55 min
+                                    </p>
                                 </div>
                             </div>
+                            <a href="#" class="post-btn-options text-decoration-none">
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </a>
+                        </div>
+
+                        <div class="post-content-text mb-3">
+                            🏠 🏢 Se Alquila minidepartamento en La Molina en el primer piso ideal para una persona (Recomendado para alumnos o egresados de CERTUS).
+                            <br><br>
+                            Para mayor información comunicarse al 942983256 o al enlace directo: <a href="https://wa.link/pppglz" target="_blank" class="post-tag-link">https://wa.link/pppglz</a>
+                        </div>
+
+                        <div class="d-flex pt-1">
+                            <button class="post-action-btn"><i class="fa-regular fa-thumbs-up"></i> Me gusta</button>
+                            <button class="post-action-btn" data-bs-toggle="modal" data-bs-target="#comentariosModal"><i class="fa-regular fa-comment"></i> Comentar</button>
+                            <button class="post-action-btn"><i class="fa-regular fa-share-from-square"></i> Compartir</button>
+                        </div>
+                    </article>
+
+                    <article class="post-card mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="d-flex align-items-center">
+                                <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=100" alt="Carlos Mendoza" class="post-header-avatar me-2">
+                                <div>
+                                    <h4 class="post-author-name">
+                                        <a href="#">Carlos Mendoza Durand</a>
+                                    </h4>
+                                    <p class="post-meta-info">
+                                        Compartido en <a href="#" class="fw-bold text-dark text-decoration-none">Proyecto Integrador - Certus</a> · Hace 2 horas
+                                    </p>
+                                </div>
+                            </div>
+                            <a href="#" class="post-btn-options text-decoration-none">
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </a>
+                        </div>
+
+                        <div class="post-content-text mb-3">
+                            📚 ¡Hola comunidad! Estamos armando un grupo de estudio para repasar los temas del examen final de algoritmos y desarrollo de software. Nos reuniremos por Meet este jueves a las 7:00 PM.
+                        </div>
+
+                        <div class="d-flex pt-1">
+                            <button class="post-action-btn"><i class="fa-regular fa-thumbs-up"></i> Me gusta</button>
+                            <button class="post-action-btn" data-bs-toggle="modal" data-bs-target="#comentariosModal"><i class="fa-regular fa-comment"></i> Comentar</button>
+                            <button class="post-action-btn"><i class="fa-regular fa-share-from-square"></i> Compartir</button>
+                        </div>
+                    </article>
+                </div>
+
+                <div id="vista-descubrir" class="d-none">
+                    <h3 class="feed-header-title">Descubrir nuevos grupos</h3>
+                    <p class="text-muted mb-4">Grupos recomendados basados en tus intereses y tu carrera en CERTUS.</p>
+
+                    <div class="row g-3">
+                        <div class="col-12 col-sm-6">
+                            <div class="card h-100 shadow-sm border-0">
+                                <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=400" class="card-img-top" alt="Diseño UI/UX" style="height: 140px; object-fit: cover;">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title fw-bold mb-1">Diseño Gráfico & UI/UX</h5>
+                                    <small class="text-muted d-block mb-2"><i class="fa-solid fa-globe me-1"></i> Grupo Público · 1.2K miembros</small>
+                                    <p class="card-text text-secondary small flex-grow-1">Comunidad para compartir recursos, mockups y feedback de interfaces.</p>
+                                    <button class="btn btn-primary btn-sm w-100 mt-2" onclick="unirseGrupo(this)">Unirse al grupo</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-sm-6">
+                            <div class="card h-100 shadow-sm border-0">
+                                <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=400" class="card-img-top" alt="Python & IA" style="height: 140px; object-fit: cover;">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title fw-bold mb-1">Club de IA & Python</h5>
+                                    <small class="text-muted d-block mb-2"><i class="fa-solid fa-globe me-1"></i> Grupo Público · 850 miembros</small>
+                                    <p class="card-text text-secondary small flex-grow-1">Espacio dedicado al análisis de datos, automatizaciones y desarrollo con librerías de Python.</p>
+                                    <button class="btn btn-primary btn-sm w-100 mt-2" onclick="unirseGrupo(this)">Unirse al grupo</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="post-counters-row d-flex justify-content-between align-items-center">
-                        <div class="d-flex align-items-center gap-1">
-                            <span class="interaction-icon-circle" style="background-color: #1877f2;">
-                                <i class="fa-solid fa-thumbs-up"></i>
-                            </span>
-                            <span class="interaction-icon-circle" style="background-color: #f02849;">
-                                <i class="fa-solid fa-heart"></i>
-                            </span>
-                            <span>14 personas</span>
-                        </div>
-                        <div>
-                            <span class="me-2">6 comentarios</span>
-                            <span>2 veces compartido</span>
+                <div id="vista-grupo-detalle" class="d-none">
+                    <div class="card border-0 shadow-sm mb-4 overflow-hidden">
+                        <img id="grupo-detalle-banner" src="" class="w-100" style="height: 180px; object-fit: cover;" alt="Banner Grupo">
+                        <div class="card-body">
+                            <h3 id="grupo-detalle-titulo" class="fw-bold mb-1"></h3>
+                            <p id="grupo-detalle-desc" class="text-secondary small mb-3"></p>
                         </div>
                     </div>
-
-                    <div class="d-flex pt-1">
-                        <button class="post-action-btn">
-                            <i class="fa-regular fa-thumbs-up"></i> Me gusta
-                        </button>
-                        <button class="post-action-btn">
-                            <i class="fa-regular fa-comment"></i> Comentar
-                        </button>
-                        <button class="post-action-btn">
-                            <i class="fa-regular fa-share-from-square"></i> Compartir
-                        </button>
-                    </div>
-
-                </article>
+                </div>
 
             </main>
 
         </div>
     </div>
 
+    <div class="modal fade" id="configGruposModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="configModalTitle">Opciones de grupos</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="subvista-privacidad" class="d-none">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Proyecto Integrador - Certus</label>
+                            <select class="form-select">
+                                <option selected>Público</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="subvista-solicitudes" class="d-none">
+                        <p>No hay solicitudes pendientes.</p>
+                    </div>
+                    <div id="subvista-miembros" class="d-none">
+                        <p>1 Miembro activo.</p>
+                    </div>
+                    <div id="subvista-salir" class="d-none">
+                        <p>No puedes salir de tus propios grupos administrados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="crearGrupoModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fa-solid fa-users"></i> Crear nuevo grupo</h5>
+                    <button class="btn-close" data-bs-dismiss="modal" id="btn-cerrar-modal-crear"></button>
+                </div>
+                <div class="modal-body">
+                    <label class="form-label fw-semibold">Nombre del grupo</label>
+                    <input class="form-control mb-3" id="input-nombre-grupo" placeholder="Ejemplo: Programadores CERTUS">
+                    <label class="form-label fw-semibold">Descripción</label>
+                    <textarea class="form-control mb-3" id="input-desc-grupo" placeholder="Descripción del grupo"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" onclick="crearNuevoGrupoProceso()">Crear grupo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="comentariosModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Comentarios</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="listaComentarios"><p><strong>Ana Rodríguez:</strong> Excelente 👍</p></div>
+                    <input id="nuevoComentario" class="form-control" placeholder="Escribe un comentario...">
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="JS/script.js"></script>
+
+    <script>
+        // FUNCIÓN CORREGIDA: Controla todas las vistas principales e incluye el contenedor de detalles
+        function cambiarVista(vista, elemento) {
+            document.getElementById('vista-feed').classList.add('d-none');
+            document.getElementById('vista-descubrir').classList.add('d-none');
+            document.getElementById('vista-grupo-detalle').classList.add('d-none');
+            
+            if (elemento) {
+                document.querySelectorAll('.group-nav-item').forEach(item => item.classList.remove('active'));
+                elemento.classList.add('active');
+            } else {
+                document.querySelectorAll('.group-nav-item').forEach(item => item.classList.remove('active'));
+            }
+
+            if(vista === 'feed') document.getElementById('vista-feed').classList.remove('d-none');
+            if(vista === 'descubrir') document.getElementById('vista-descubrir').classList.remove('d-none');
+            if(vista === 'detalle') document.getElementById('vista-grupo-detalle').classList.remove('d-none');
+        }
+
+        function cargarGrupoEspecifico(nombre, urlImagen, descripcion) {
+            cambiarVista('detalle', null);
+            document.getElementById('grupo-detalle-titulo').textContent = nombre;
+            document.getElementById('grupo-detalle-banner').src = urlImagen;
+            document.getElementById('grupo-detalle-desc').textContent = descripcion;
+        }
+
+        function crearNuevoGrupoProceso() {
+            const txtNombre = document.getElementById('input-nombre-grupo').value.trim();
+            const txtDesc = document.getElementById('input-desc-grupo').value.trim();
+            if(txtNombre === "" || txtDesc === "") {
+                alert("Por favor rellena los campos");
+                return;
+            }
+
+            const bannerSimulado = "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=600";
+            const avatarSimulado = `https://ui-avatars.com/api/?name=${encodeURIComponent(txtNombre)}&background=0D6EFD&color=fff&bold=true`;
+            const listaAdministrados = document.getElementById('lista-grupos-administrados');
+
+            const nuevoEnlace = document.createElement('a');
+            nuevoEnlace.href = "#";
+            nuevoEnlace.className = "item-list-group";
+            nuevoEnlace.onclick = function() { cargarGrupoEspecifico(txtNombre, bannerSimulado, txtDesc); };
+
+            nuevoEnlace.innerHTML = `
+                <img src="${avatarSimulado}" alt="${txtNombre}" class="item-group-avatar">
+                <div class="overflow-hidden">
+                    <h4 class="item-group-name">${txtNombre}</h4>
+                    <p class="item-group-meta">Activo por última vez: Recién creado</p>
+                </div>
+            `;
+            listaAdministrados.insertBefore(nuevoEnlace, listaAdministrados.firstChild);
+            
+            // Limpieza e interactividad
+            document.getElementById('input-nombre-grupo').value = "";
+            document.getElementById('input-desc-grupo').value = "";
+            document.getElementById('btn-cerrar-modal-crear').click();
+
+            // Renderiza el nuevo grupo automáticamente en pantalla
+            cargarGrupoEspecifico(txtNombre, bannerSimulado, txtDesc);
+        }
+
+        function irASubvista(idSubvista, tituloNuevo) {
+            document.getElementById('subvista-privacidad').classList.add('d-none');
+            document.getElementById('subvista-solicitudes').classList.add('d-none');
+            document.getElementById('subvista-miembros').classList.add('d-none');
+            document.getElementById('subvista-salir').classList.add('d-none');
+
+            document.getElementById('subvista-' + idSubvista).classList.remove('d-none');
+            document.getElementById('configModalTitle').innerHTML = `<i class="fa-solid fa-ellipsis-vertical me-2"></i> ${tituloNuevo}`;
+        }
+
+        function unirseGrupo(boton) {
+            boton.className = "btn btn-outline-success btn-sm w-100 mt-2";
+            boton.innerHTML = '<i class="fa-solid fa-check me-1"></i> Miembro';
+            boton.disabled = true;
+        }
+    </script>
 </body>
 </html>
